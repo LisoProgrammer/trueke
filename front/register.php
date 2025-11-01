@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRARSE - TRUEKE</title>
+    <style>
+        h1,
+        h2,
+        h3 {
+            color: var(--primary-color);
+            text-align: left;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        .container-center {
+            max-width: 430px;
+            margin: 0 auto;
+            padding: 32px 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .c_icon img {
+            width: 160px;
+            margin-bottom: 18px;
+            margin-top: 14px;
+        }
+        h1 {
+            color: #21bb47;
+            margin-bottom: 6px;
+            font-size: 2.2rem;
+            width: 100%;
+            text-align: left;
+        }
+        .registro-form {
+            background: #fff;
+            width: 100%;
+        }
+        .registro-form p {
+            margin-top: 0;
+            color: #414141;
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+            text-align:left;
+        }
+        h3 {
+            color: #21bb47;
+            margin-top: 18px;
+            margin-bottom: 8px;
+            text-align:left;
+            font-size: 1.08rem;
+        }
+        .input-group {
+            display: flex;
+            align-items: center;
+            background: #f8f8f8;
+            border-radius: 25px;
+            padding: 8px 14px;
+            margin-bottom: 13px;
+            border: 1px solid #e0e0e0;
+        }
+        .input-group input {
+            border: none;
+            background: transparent;
+            outline: none;
+            flex: 1;
+            padding: 8px 8px;
+            font-size: 1rem;
+            border-radius: 25px;
+        }
+        .input-icon {
+            margin-right: 10px;
+            font-size: 1.1rem;
+            color: #5db36e;
+        }
+        .ayuda {
+            font-size: 0.97rem;
+            color: #636363;
+            margin-bottom: 4px;
+        }
+        .msg-valid,
+        .msg-error {
+            font-size: 0.99rem;
+            margin-bottom: 0;
+            display: none;
+        }
+        .msg-valid {
+            color: #21bb47;
+        }
+        .msg-error {
+            color: #e53935;
+        }
+        .btn-registro {
+            background: #21bb47;
+            color: #fff;
+            padding: 15px 0;
+            font-size: 1.15rem;
+            border: none;
+            border-radius: 25px;
+            margin-top: 22px;
+            margin-bottom: 14px;
+            cursor: pointer;
+            font-weight: bold;
+            width: 100%;
+        }
+        .btn-registro:hover {
+            background: #169137;
+        }
+        .mostrar-pass {
+            display: flex;
+            align-items: center;
+            font-size: 1rem;
+            gap: 8px;
+            margin: 0 0 9px 3px;
+        }
+        .existe {
+            font-size: 1rem;
+            color: #474747;
+            text-align: center;
+        }
+        .existe a {
+            color: #21bb47;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="container-center">
+            <div class="c_icon">
+                <!-- Cambia la ruta por la de tu logo -->
+                <img src="../assets/image.png" alt="Logo TRUEKE">
+            </div>
+            <h1>Regístrate</h1>
+            <form class="registro-form" autocomplete="off" onsubmit="return false;">
+                <p>Crea una cuenta para disfrutar de todas las características de TRUEKE.</p>
+
+                <h3>¿Cómo te llamas?</h3>
+                <div class="input-group">
+                    <span class="input-icon">👤</span>
+                    <input type="text" placeholder="Nombre" required>
+                </div>
+                <div class="input-group">
+                    <span class="input-icon">👤</span>
+                    <input type="text" placeholder="Apellido" required>
+                </div>
+
+                <h3>Crea tu usuario</h3>
+                <p class="ayuda">Tu nombre de usuario puede tener este formato: <b>@tu.usuario.123</b><br>Debe tener mínimo <b>8</b> caracteres.</p>
+                <div class="msg-error" id="usuarioError">
+                    <span class="icon-error">❌</span> Este usuario no es válido, elige otro.
+                </div>
+                <div class="msg-valid" id="usuarioValido">
+                    <span class="icon-valid">✔️</span> Este usuario es válido.
+                </div>
+                <div class="input-group">
+                    <span class="input-icon">@</span>
+                    <input type="text" id="usuario" placeholder="@usuario" minlength="8" required style="text-transform: none;" oninput="validarUsuario()">
+                </div>
+
+                <h3>Crea tu contraseña</h3>
+                <p class="ayuda">Tu contraseña debe tener mínimo <b>8</b> caracteres.</p>
+                <div class="input-group">
+                    <span class="input-icon">🔑</span>
+                    <input type="password" id="pass1" placeholder="Contraseña" minlength="8" required>
+                </div>
+                <div class="input-group">
+                    <span class="input-icon">🔑</span>
+                    <input type="password" id="pass2" placeholder="Repita la contraseña" minlength="8" required>
+                </div>
+                <label class="mostrar-pass">
+                    <input type="checkbox" onclick="mostrarContrasenas()"> Mostrar contraseñas
+                </label>
+                <button type="submit" class="btn-registro">ME QUIERO REGISTRAR</button>
+                <p class="existe">¿Ya tienes una cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
