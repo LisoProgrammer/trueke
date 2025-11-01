@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+:root {
+    --primary-color: #14A146;
+}
+.container-center{
+    width: 100%;
+    max-width: 320px;
+    height: 500px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.margin-top-50{
+    margin-top: 50px;
+}
+.div_100 {
+    width: 100%;
+}
+.c_icon img{
+    max-width: 200px;
+}
+
+.a-especial {
+    text-decoration: none;
+    color: #fff;
+    background: var(--primary-color);
+    font-weight: 600;
+    display: block;
+    border-radius: 100px;
+    padding: 15px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
