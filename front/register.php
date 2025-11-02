@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../assets/css/style.css">
     <title>REGISTRARSE - TRUEKE</title>
-
+    
 </head>
 <body>
     <main>
@@ -50,6 +50,7 @@
                     <span class="input-icon"><img src="../assets/icons/key.png" alt=""></span>
                     <input type="password" id="pass2" placeholder="Repita la contraseña" minlength="8" required>
                 </div>
+                <span id="password_message"></span>
                 <label class="mostrar-pass">
                     <input type="checkbox" onclick="mostrarContrasenas()"> Mostrar contraseñas
                 </label>

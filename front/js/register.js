@@ -8,6 +8,7 @@ document.querySelector('.registro-form').addEventListener('submit', function(e) 
     let pass1 = document.getElementById('pass1');
     let pass2 = document.getElementById('pass2');
     let valido = true;
+    let password_message = document.getElementById('password_message')
 
     // Validación nombre
     if (!/^[A-Za-zÁÉÍÓÚáéíóúüÜñÑ ]{2,}$/.test(nombre.value.trim())) {
@@ -51,9 +52,13 @@ document.querySelector('.registro-form').addEventListener('submit', function(e) 
     if (pass1.value !== pass2.value || pass2.value.length < 8) {
         pass2.style.border = "2px solid #e53935";
         valido = false;
-    } else {
-        pass2.style.border = "no coindicen";
-    }
+        password_message.innerText = "Las contraseñas no coinciden";
+        password_message.style.color = "red";
+    }else{
+        password_message.style.color = "green";
+        password_message.innerText = "Las contraseñas son iguales";
+        pass2.style.border = "2px solid #35e561ff";
+    } 
 
     // Si todo es válido, puedes enviar el formulario aquí
     if (valido) {
