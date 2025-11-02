@@ -59,6 +59,7 @@
         </div>
         <br>
     </main>
+    <script src="js/register.js"></script>
 </body>
 </html>
 
