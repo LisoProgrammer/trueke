@@ -74,9 +74,12 @@
             <span><img src="/<?php echo $file_root ?>/assets/icons/search.png" alt=""></span>
             <input type="text" placeholder="¿Qué necesitas intercambiar? Busca 'Libros' ó 'Tijeras'" style="font-size: 15px;">
         </div>
-        <button class="button-menu">
+        <button class="button-menu" id="button_open_menu">
             <img src="/<?php echo $file_root ?>/assets/icons/menu.png" alt="">
         </button>
     </div>
 
 </header>
+<?php
+include "menu.php"
+?>
