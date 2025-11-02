@@ -16,8 +16,7 @@ document.querySelector('.registro-form').addEventListener('submit', function(e) 
     } else {
         nombre.style.border = "";
     }
-
-    // Validación apellido
+// Validación apellido
     if (!/^[A-Za-zÁÉÍÓÚáéíóúüÜñÑ ]{2,}$/.test(apellido.value.trim())) {
         apellido.style.border = "2px solid #e53935";
         valido = false;
