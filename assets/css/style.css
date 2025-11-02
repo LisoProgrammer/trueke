@@ -6,6 +6,9 @@
 :root {
     --primary-color: #14A146;
 }
+button{
+    cursor: pointer;
+}
 .container-center{
     width: 100%;
     max-width: 320px;
