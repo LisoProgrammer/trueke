@@ -6,6 +6,7 @@
         box-shadow: 0px 0px 10px gray;
         position: sticky;
         top: 0px;
+        background: #fff;
     }
 
     .logo-header {
