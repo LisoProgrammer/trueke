@@ -9,6 +9,18 @@ document.querySelector('.registro-form').addEventListener('submit', function(e) 
     let pass2 = document.getElementById('pass2');
     let valido = true;
     let password_message = document.getElementById('password_message')
+    
+    nombre.value   = nombre.value.trim().replace(/\s+/g, '');
+    apellido.value = apellido.value.trim().replace(/\s+/g, '');
+    usuario.value  = usuario.value.trim().replace(/\s+/g, '');
+
+    alert(
+      'Nombre: ['   + nombre.value   + ']\n' +
+      'Apellido: [' + apellido.value + ']\n' +
+      'Usuario: ['  + usuario.value  + ']\n' +
+      'Pass1: ['    + pass1.value    + ']\n' +
+      'Pass2: ['    + pass2.value    + ']'
+    );
 
     // Validación nombre
     if (!/^[A-Za-zÁÉÍÓÚáéíóúüÜñÑ ]{2,}$/.test(nombre.value.trim())) {
