@@ -52,7 +52,6 @@
         color: #fff;
         cursor: pointer;
     }
-
     .button-menu {
         background: none;
         border: none;
