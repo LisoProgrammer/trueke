@@ -20,15 +20,15 @@
                 <h3>¿Cómo te llamas?</h3>
                 <div class="input-group">
                     <span class="input-icon"><img src="../assets/icons/id.png" alt=""></span>
-                    <input type="text" placeholder="Nombre" required>
+                    <input type="text" id="nombre" placeholder="Nombre" required>
                 </div>
                 <div class="input-group">
                     <span class="input-icon"><img src="../assets/icons/id.png" alt=""></span>
-                    <input type="text" placeholder="Apellido" required>
+                    <input type="text" id="apellido" placeholder="Apellido" required>
                 </div>
 
                 <h3>Crea tu usuario</h3>
-                <p class="ayuda">Tu nombre de usuario puede tener este formato: <b>@tu.usuario.123</b><br>Debe tener mínimo <b>8</b> caracteres.</p>
+                <p class="ayuda">Tu nombre de usuario puede tener este formato: <b>@tu.usuario.123</b><br>Debe tener mínimo <b>8</b> caracteres<br>Tu usuario no debe contener espacios.</p>
                 <div class="msg-error" id="usuarioError">
                     <span class="icon-error">❌</span> Este usuario ya existe, elige otro.
                 </div>
