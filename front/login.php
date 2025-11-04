@@ -32,7 +32,7 @@
                     <input type="checkbox" onclick="mostrarContrasena()"> Mostrar contraseña
                 </label>
                 <button type="submit" class="btn-registro">INICIAR SESIÓN</button>
-                <p class="existe">¿No tienes una cuenta? <a href="login.php">Registrate aquí</a></p>
+                <p class="existe">¿No tienes una cuenta? <a href="register.php">Registrate aquí</a></p>
             </form>
         </div>
         <br>
