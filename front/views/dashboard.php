@@ -83,7 +83,78 @@
                     </div>
 
                     <div class="flex tools">
-                        <button>Eliminar publicación</button>
+                        <button class="flex delete">
+                            <img src="/trueke/assets/icons/delete.png" alt="">
+                            <span>
+                               Eliminar publicación 
+                            </span>
+                        </button>
+                        <button>
+                            <span class="num_buble">1</span>
+                            <img src="/trueke/assets/icons/gift.png" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="card_item">
+                    <div class="flex">
+                        <div class="flex">
+                            <img src="/trueke/assets/icons/arrow_right.png" alt="">
+                            <div class="flex column">
+                                <span>Lisandro Z...</span>
+                                <span>Hace 3 minutos</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span>8</span>
+                            <span>Clicks</span>
+                        </div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/trueke/assets/samples/4335.jpg" alt="">
+                    </div>
+
+                    <div class="flex tools">
+                        <button class="flex delete">
+                            <img src="/trueke/assets/icons/delete.png" alt="">
+                            <span>
+                               Eliminar publicación 
+                            </span>
+                        </button>
+                        <button>
+                            <span class="num_buble">1</span>
+                            <img src="/trueke/assets/icons/gift.png" alt="">
+                        </button>
+                    </div>
+                </div>
+                <div class="card_item">
+                    <div class="flex">
+                        <div class="flex">
+                            <img src="/trueke/assets/icons/arrow_right.png" alt="">
+                            <div class="flex column">
+                                <span>Lisandro Z...</span>
+                                <span>Hace 3 minutos</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span>8</span>
+                            <span>Clicks</span>
+                        </div>
+                    </div>
+
+                    <div class="img">
+                        <img src="/trueke/assets/samples/4335.jpg" alt="">
+                    </div>
+
+                    <div class="flex tools">
+                        <button class="flex delete">
+                            <img src="/trueke/assets/icons/delete.png" alt="">
+                            <span>
+                               Eliminar publicación 
+                            </span>
+                        </button>
                         <button>
                             <span class="num_buble">1</span>
                             <img src="/trueke/assets/icons/gift.png" alt="">
@@ -112,36 +183,12 @@
                     </div>
 
                     <div class="flex tools">
-                        <button>Eliminar publicación</button>
-                        <button>
-                            <span class="num_buble">1</span>
-                            <img src="/trueke/assets/icons/gift.png" alt="">
+                        <button class="flex delete">
+                            <img src="/trueke/assets/icons/delete.png" alt="">
+                            <span>
+                               Eliminar publicación 
+                            </span>
                         </button>
-                    </div>
-                </div>
-
-                <div class="card_item">
-                    <div class="flex">
-                        <div class="flex">
-                            <img src="/trueke/assets/icons/arrow_right.png" alt="">
-                            <div class="flex column">
-                                <span>Lisandro Z...</span>
-                                <span>Hace 3 minutos</span>
-                            </div>
-                        </div>
-
-                        <div>
-                            <span>8</span>
-                            <span>Clicks</span>
-                        </div>
-                    </div>
-
-                    <div class="img">
-                        <img src="/trueke/assets/samples/4335.jpg" alt="">
-                    </div>
-
-                    <div class="flex tools">
-                        <button>Eliminar publicación</button>
                         <button>
                             <span class="num_buble">1</span>
                             <img src="/trueke/assets/icons/gift.png" alt="">
@@ -155,9 +202,183 @@
                 <img src="/trueke/assets/icons/right.png" alt="">
             </button>
         </div>
-
-
         <h2>Sugerencias para tí</h2>
+        <div class="grid_layout_cards">
+            <div class="card_item">
+                <div class="flex">
+                    <div class="flex">
+                        <img src="/trueke/assets/icons/arrow_right.png" alt="">
+                        <div class="flex column">
+                            <span>Lisandro Z...</span>
+                            <span>Hace 3 minutos</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span>8</span>
+                        <span>Clicks</span>
+                    </div>
+                </div>
+
+                <div class="img">
+                    <img src="/trueke/assets/samples/4335.jpg" alt="">
+                </div>
+                <div class="flex tools">
+                    <button class="flex center primary-button">
+                        <img src="/trueke/assets/icons/trueque.png" alt="">
+                        <span>Solicitar trueque</span>
+                    </button>
+                    <button>
+                        <img src="/trueke/assets/icons/dislike.png" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="card_item">
+                <div class="flex">
+                    <div class="flex">
+                        <img src="/trueke/assets/icons/arrow_right.png" alt="">
+                        <div class="flex column">
+                            <span>Lisandro Z...</span>
+                            <span>Hace 3 minutos</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span>8</span>
+                        <span>Clicks</span>
+                    </div>
+                </div>
+
+                <div class="img">
+                    <img src="/trueke/assets/samples/4335.jpg" alt="">
+                </div>
+                <div class="flex tools">
+                    <button class="flex center primary-button">
+                        <img src="/trueke/assets/icons/trueque.png" alt="">
+                        <span>Solicitar trueque</span>
+                    </button>
+                    <button>
+                        <img src="/trueke/assets/icons/dislike.png" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="card_item">
+                <div class="flex">
+                    <div class="flex">
+                        <img src="/trueke/assets/icons/arrow_right.png" alt="">
+                        <div class="flex column">
+                            <span>Lisandro Z...</span>
+                            <span>Hace 3 minutos</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span>8</span>
+                        <span>Clicks</span>
+                    </div>
+                </div>
+
+                <div class="img">
+                    <img src="/trueke/assets/samples/4335.jpg" alt="">
+                </div>
+                <div class="flex tools">
+                    <button class="flex center primary-button">
+                        <img src="/trueke/assets/icons/trueque.png" alt="">
+                        <span>Solicitar trueque</span>
+                    </button>
+                    <button>
+                        <img src="/trueke/assets/icons/dislike.png" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="card_item">
+                <div class="flex">
+                    <div class="flex">
+                        <img src="/trueke/assets/icons/arrow_right.png" alt="">
+                        <div class="flex column">
+                            <span>Lisandro Z...</span>
+                            <span>Hace 3 minutos</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span>8</span>
+                        <span>Clicks</span>
+                    </div>
+                </div>
+
+                <div class="img">
+                    <img src="/trueke/assets/samples/4335.jpg" alt="">
+                </div>
+                <div class="flex tools">
+                    <button class="flex center primary-button">
+                        <img src="/trueke/assets/icons/trueque.png" alt="">
+                        <span>Solicitar trueque</span>
+                    </button>
+                    <button>
+                        <img src="/trueke/assets/icons/dislike.png" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="card_item">
+                <div class="flex">
+                    <div class="flex">
+                        <img src="/trueke/assets/icons/arrow_right.png" alt="">
+                        <div class="flex column">
+                            <span>Lisandro Z...</span>
+                            <span>Hace 3 minutos</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span>8</span>
+                        <span>Clicks</span>
+                    </div>
+                </div>
+
+                <div class="img">
+                    <img src="/trueke/assets/samples/4335.jpg" alt="">
+                </div>
+                <div class="flex tools">
+                    <button class="flex center primary-button">
+                        <img src="/trueke/assets/icons/trueque.png" alt="">
+                        <span>Solicitar trueque</span>
+                    </button>
+                    <button>
+                        <img src="/trueke/assets/icons/dislike.png" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="card_item">
+                <div class="flex">
+                    <div class="flex">
+                        <img src="/trueke/assets/icons/arrow_right.png" alt="">
+                        <div class="flex column">
+                            <span>Lisandro Z...</span>
+                            <span>Hace 3 minutos</span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <span>8</span>
+                        <span>Clicks</span>
+                    </div>
+                </div>
+
+                <div class="img">
+                    <img src="/trueke/assets/samples/4335.jpg" alt="">
+                </div>
+                <div class="flex tools">
+                    <button class="flex center primary-button">
+                        <img src="/trueke/assets/icons/trueque.png" alt="">
+                        <span>Solicitar trueque</span>
+                    </button>
+                    <button>
+                        <img src="/trueke/assets/icons/dislike.png" alt="">
+                    </button>
+                </div>
+            </div>
+        </div>
     </main>
 
 </body>

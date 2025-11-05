@@ -15,7 +15,7 @@
             </div>
             <h1>Iniciar sesión </h1>
             <form class="registro-form" autocomplete="off" onsubmit="return false;">
-                <p>!Bienvenido¡ Inicia sesión para empezar a intercambiar cosas.</p>
+                <p>¡Bienvenido! Inicia sesión para empezar a intercambiar cosas.</p>
 
                 <div class="input-group">
                     <span class="input-icon"><img src="../assets/icons/mail.png" alt=""></span>

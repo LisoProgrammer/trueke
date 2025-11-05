@@ -272,11 +272,18 @@ h3 {
 .card_item > .tools > button:nth-child(1) {
   border: none;
   color: #fff;
-  background: #cd3030;
-  padding: 10px;
+  padding: 6px;
   border-radius: 5px;
 }
-
+.card_item > .tools > button:nth-child(1).trueke {
+  background: var(--primary-color);
+}
+.card_item > .tools > button:nth-child(1).delete {
+  background: #cd3030;
+}
+.card_item > .tools > button:nth-child(1) > span {
+  margin-left: 3px;
+}
 .card_item > .tools > button:nth-child(2) {
   border: none;
   background: transparent;
@@ -329,4 +336,15 @@ h3 {
 
 .btn-move.next {
   right: -20px;
+}
+.grid_layout_cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  gap: 20px; /* separación entre tarjetas */
+  justify-content: start; /* alinear las filas incompletas a la izquierda */
+  align-items: start;
+  width: 100%;
+  max-width: 900px; /* opcional: ancho máximo del bloque */
+  margin: 0 auto; /* centrar el contenedor general */
+  padding: 0px 0px 20px 0px;
 }

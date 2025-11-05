@@ -7,6 +7,7 @@
         position: sticky;
         top: 0px;
         background: #fff;
+        z-index: 30;
     }
 
     .logo-header {
