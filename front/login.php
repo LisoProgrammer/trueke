@@ -18,8 +18,8 @@
                 <p>!Bienvenido¡ Inicia sesión para empezar a intercambiar cosas.</p>
 
                 <div class="input-group">
-                    <span class="input-icon"><img src="../assets/icons/person.png" alt=""></span>
-                    <input type="text" id="usuario" placeholder="@usuario" minlength="8" required style="text-transform: none;" oninput="validarUsuario()">
+                    <span class="input-icon"><img src="../assets/icons/mail.png" alt=""></span>
+                    <input type="email" id="correo" placeholder="example@utb.edu.co" required style="text-transform: none;" oninput="validarCorreo()">
                 </div>
 
                 <div class="input-group">

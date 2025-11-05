@@ -4,7 +4,6 @@ document.querySelector('.registro-form').addEventListener('submit', function(e) 
     // Variables de campo
     let nombre = document.querySelector('input[placeholder="Nombre"]');
     let apellido = document.querySelector('input[placeholder="Apellido"]');
-    let usuario = document.getElementById('usuario');
     let pass1 = document.getElementById('pass1');
     let pass2 = document.getElementById('pass2');
     let valido = true;
@@ -12,8 +11,6 @@ document.querySelector('.registro-form').addEventListener('submit', function(e) 
     
     nombre.value   = nombre.value.trim().replace(/\s+/g, '');
     apellido.value = apellido.value.trim().replace(/\s+/g, '');
-    usuario.value  = usuario.value.trim().replace(/\s+/g, '');
-
     alert(
       'Nombre: ['   + nombre.value   + ']\n' +
       'Apellido: [' + apellido.value + ']\n' +
@@ -37,21 +34,26 @@ document.querySelector('.registro-form').addEventListener('submit', function(e) 
         apellido.style.border = "";
     }
 
-    // Validación usuario
-    let usuarioValido = document.getElementById("usuarioValido");
-    let usuarioError = document.getElementById("usuarioError");
-    let regexUsuario = /^@[a-zA-Z0-9._]{7,}$/;
-    if (!regexUsuario.test(usuario.value)) {
-        usuario.style.border = "2px solid #e53935";
-        usuarioError.style.display = "block";
-        usuarioValido.style.display = "none";
+    // Validación correo
+    const correo = document.getElementById("correo");
+    // normaliza antes de evaluar
+    correo.value = correo.value.trim().toLowerCase();
+
+    const regexCorreo = /^[a-z0-9._%+-]+@utb\.edu\.co$/;
+
+    if (!regexCorreo.test(correo.value)) {
+    correo.style.border = "2px solid #e53935";
+        document.getElementById("correoError").style.display  = "block";
+        document.getElementById("correoValido").style.display = "none";
         valido = false;
     } else {
-        usuario.style.border = "";
-        usuarioError.style.display = "none";
-        usuarioValido.style.display = "block";
+    correo.style.border = "2px solid #35e561ff";
+        document.getElementById("correoError").style.display  = "none";
+        document.getElementById("correoValido").style.display = "block";
     }
 
+
+        
     // Validación contraseña
     if (pass1.value.length < 8) {
         pass1.style.border = "2px solid #e53935";
@@ -80,20 +82,29 @@ document.querySelector('.registro-form').addEventListener('submit', function(e) 
     }
 });
 
-// Validación en vivo del usuario
-document.getElementById("usuario").addEventListener("input", function() {
-    let val = this.value;
-    let valido = document.getElementById("usuarioValido");
-    let error = document.getElementById("usuarioError");
-    let regex = /^@[a-zA-Z0-9._]{7,}$/;
-    if (regex.test(val)) {
-        valido.style.display = "block";
-        error.style.display = "none";
-    } else {
-        valido.style.display = "none";
-        error.style.display = "block";
-    }
-});
+// formateo del del correo
+function validarCorreo() {
+  const correoInput = document.getElementById("correo");
+  const correoValido = document.getElementById("correoValido");
+  const correoError  = document.getElementById("correoError");
+
+  // normaliza a minúsculas y sin espacios alrededor
+  correoInput.value = correoInput.value.trim().toLowerCase();
+
+  // solo @utb.edu.co en minúsculas
+  const regexCorreo = /^[a-z0-9._%+-]+@utb\.edu\.co$/;
+
+  if (regexCorreo.test(correoInput.value)) {
+    correoInput.style.border = "2px solid #35e561ff";
+    correoValido.style.display = "block";
+    correoError.style.display  = "none";
+  } else {
+    correoInput.style.border = "2px solid #e53935";
+    correoError.style.display  = "block";
+    correoValido.style.display = "none";
+  }
+}
+
 
 // Mostrar/ocultar contraseñas
 function mostrarContrasenas() {

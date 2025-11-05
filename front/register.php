@@ -26,20 +26,24 @@
                     <span class="input-icon"><img src="../assets/icons/id.png" alt=""></span>
                     <input type="text" id="apellido" placeholder="Apellido" required>
                 </div>
+ 
 
-                <h3>Crea tu usuario</h3>
-                <p class="ayuda">Tu nombre de usuario puede tener este formato: <b>@tu.usuario.123</b><br>Debe tener mínimo <b>8</b> caracteres<br>Tu usuario no debe contener espacios.</p>
-                <div class="msg-error" id="usuarioError">
-                    <span class="icon-error">❌</span> Este usuario ya existe, elige otro.
+                <h3>Ingresa tu correo</h3>
+                <p class="ayuda">Tu correo debe tener este formato: <b>example@utb.edu.co</b><br> Tu correo no debe contener espacios.</p>
+
+                <div class="msg-error" id="correoError" style="display:none;">
+                    <span class="icon-error">❌</span> El correo no es válido o no pertenece al dominio <b>@utb.edu.co</b>.
                 </div>
-                <div class="msg-valid" id="usuarioValido">
-                    <span class="icon-valid">✔️</span> Este usuario es válido.
+                <div class="msg-valid" id="correoValido" style="display:none;">
+                    <span class="icon-valid">✔️</span> El correo es válido.
                 </div>
+
                 <div class="input-group">
-                    <span class="input-icon"><img src="../assets/icons/person.png" alt=""></span>
-                    <input type="text" id="usuario" placeholder="@usuario" minlength="8" required style="text-transform: none;" oninput="validarUsuario()">
+                    <span class="input-icon"><img src="../assets/icons/mail.png" alt=""></span>
+                <input
+                    type="email" id="correo" placeholder="example@utb.edu.co" requiredinputmode="email" spellcheck="false" autocomplete="off" pattern="^[a-z0-9._%+-]+@utb\.edu\.co$" oninput="validarCorreo()"
+                >
                 </div>
-
                 <h3>Crea tu contraseña</h3>
                 <p class="ayuda">Tu contraseña debe tener mínimo <b>8</b> caracteres.</p>
                 <div class="input-group">

@@ -1,21 +1,47 @@
 document.querySelector('.registro-form').addEventListener('submit', function(e) {
 
-    // Validación usuario
-    let usuarioValido = document.getElementById("usuarioValido");
-    let usuarioError = document.getElementById("usuarioError");
-    let regexUsuario = /^@[a-zA-Z0-9._]{7,}$/;
-    if (!regexUsuario.test(usuario.value)) {
-        usuario.style.border = "2px solid #e53935";
-        usuarioError.style.display = "block";
-        usuarioValido.style.display = "none";
+    // Validación correo
+    const correo = document.getElementById("correo");
+    // normaliza antes de evaluar
+    correo.value = correo.value.trim().toLowerCase();
+
+    const regexCorreo = /^[a-z0-9._%+-]+@utb\.edu\.co$/;
+
+    if (!regexCorreo.test(correo.value)) {
+    correo.style.border = "2px solid #e53935";
+        document.getElementById("correoError").style.display  = "block";
+        document.getElementById("correoValido").style.display = "none";
         valido = false;
     } else {
-        usuario.style.border = "";
-        usuarioError.style.display = "none";
-        usuarioValido.style.display = "block";
+    correo.style.border = "2px solid #35e561ff";
+        document.getElementById("correoError").style.display  = "none";
+        document.getElementById("correoValido").style.display = "block";
     }
 
 })
+
+// formateo del del correo
+function validarCorreo() {
+  const correoInput = document.getElementById("correo");
+  const correoValido = document.getElementById("correoValido");
+  const correoError  = document.getElementById("correoError");
+
+  // normaliza a minúsculas y sin espacios alrededor
+  correoInput.value = correoInput.value.trim().toLowerCase();
+
+  // solo @utb.edu.co en minúsculas
+  const regexCorreo = /^[a-z0-9._%+-]+@utb\.edu\.co$/;
+
+  if (regexCorreo.test(correoInput.value)) {
+    correoInput.style.border = "2px solid #35e561ff";
+    correoValido.style.display = "block";
+    correoError.style.display  = "none";
+  } else {
+    correoInput.style.border = "2px solid #e53935";
+    correoError.style.display  = "block";
+    correoValido.style.display = "none";
+  }
+}
 
 // funcion para ver la contraseña de el login
 function mostrarContrasena() {
