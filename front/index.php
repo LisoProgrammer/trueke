@@ -26,7 +26,7 @@
             </div>
             <div>
                 <h3>
-                    Intercambia tus cosas por otras que necesites
+                    Intercambia tus cosas por otras que necesites.
                 </h3>
             </div>
             <div class="div_100 margin-top-50">
