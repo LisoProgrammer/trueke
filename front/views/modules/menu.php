@@ -45,6 +45,21 @@
         z-index: -300;
         background: transparent;
     }
+
+    .menu a {
+        display: block;
+        padding: 10px;
+        color: #333;
+        text-decoration: none;
+        font-weight: 500;
+        border-radius: 8px;
+        transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .menu a:hover {
+        background: #f2f2f2;
+        color: #000;
+    }
 </style>
 <div class="subcapa-menu close" id="subcapa_menu">
     <div class="menu" id="menu">
@@ -56,6 +71,7 @@
                 <img src="/trueke/assets/icons/close.png" alt="">
             </button>
         </header>
+        <a href="/trueke/back/close_sesion.php">Cerrar sesión</a>
     </div>
 </div>
 <script src="/trueke/front/views/modules/js/menu.js"></script>

@@ -1,3 +1,7 @@
+<?php
+require __DIR__."/../../back/check_sesion.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
