@@ -72,9 +72,9 @@
                             </div>
                         </div>
 
-                        <div>
+                        <div class="flex"> 
+                            <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
                             <span>8</span>
-                            <span>Clicks</span>
                         </div>
                     </div>
 
@@ -105,9 +105,9 @@
                             </div>
                         </div>
 
-                        <div>
+                        <div class="flex"> 
+                            <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
                             <span>8</span>
-                            <span>Clicks</span>
                         </div>
                     </div>
 
@@ -138,9 +138,9 @@
                             </div>
                         </div>
 
-                        <div>
+                        <div class="flex"> 
+                            <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
                             <span>8</span>
-                            <span>Clicks</span>
                         </div>
                     </div>
 
@@ -172,9 +172,9 @@
                             </div>
                         </div>
 
-                        <div>
+                        <div class="flex"> 
+                            <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
                             <span>8</span>
-                            <span>Clicks</span>
                         </div>
                     </div>
 
@@ -214,10 +214,10 @@
                         </div>
                     </div>
 
-                    <div>
-                        <span>8</span>
-                        <span>Clicks</span>
-                    </div>
+                <div class="flex">
+                <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
+                <span>8</span>
+            </div>
                 </div>
 
                 <div class="img">
@@ -243,10 +243,10 @@
                         </div>
                     </div>
 
-                    <div>
-                        <span>8</span>
-                        <span>Clicks</span>
-                    </div>
+                <div class="flex">
+                <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
+                <span>8</span>
+            </div>
                 </div>
 
                 <div class="img">
@@ -272,10 +272,10 @@
                         </div>
                     </div>
 
-                    <div>
-                        <span>8</span>
-                        <span>Clicks</span>
-                    </div>
+                <div class="flex">
+                <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
+                <span>8</span>
+            </div>
                 </div>
 
                 <div class="img">
@@ -301,10 +301,10 @@
                         </div>
                     </div>
 
-                    <div>
-                        <span>8</span>
-                        <span>Clicks</span>
-                    </div>
+                <div class="flex">
+                <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
+                <span>8</span>
+            </div>
                 </div>
 
                 <div class="img">
@@ -330,10 +330,10 @@
                         </div>
                     </div>
 
-                    <div>
-                        <span>8</span>
-                        <span>Clicks</span>
-                    </div>
+                <div class="flex">
+                <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
+                <span>8</span>
+            </div>
                 </div>
 
                 <div class="img">
@@ -359,10 +359,10 @@
                         </div>
                     </div>
 
-                    <div>
-                        <span>8</span>
-                        <span>Clicks</span>
-                    </div>
+                <div class="flex">
+                <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
+                <span>8</span>
+            </div>
                 </div>
 
                 <div class="img">
