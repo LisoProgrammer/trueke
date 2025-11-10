@@ -23,6 +23,7 @@ $user = $_SESSION["user"];
 <body>
     <?php
     include "../../setting.php";
+    include "modules/ventana_new_publication.php";
     include "modules/header.php";
     ?>
     <main>
