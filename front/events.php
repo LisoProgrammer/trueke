@@ -7,7 +7,8 @@ if (isset($_GET["code_msg"])) {
      */
     $alerts = [
         100 => ["title" => "¡Yupi!", "msg" => "Usuario creado correctamente", "icon" => "success"],
-        110 => ["title" => "¡Oops!", "msg" => "El usuario ya existe. Intenta iniciar sesión", "icon" => "error"]
+        110 => ["title" => "¡Oops!", "msg" => "El usuario ya existe. Intenta iniciar sesión", "icon" => "error"],
+        210 => ["title" => "¡Oops!", "msg" => "La contraseña es incorrecta. Intenta nuevamente.", "icon" => "error"]
     ];
 
     // Validar que el código exista en el array
