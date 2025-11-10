@@ -14,7 +14,6 @@ document.querySelector('.registro-form').addEventListener('submit', function(e) 
     alert(
       'Nombre: ['   + nombre.value   + ']\n' +
       'Apellido: [' + apellido.value + ']\n' +
-      'Usuario: ['  + usuario.value  + ']\n' +
       'Pass1: ['    + pass1.value    + ']\n' +
       'Pass2: ['    + pass2.value    + ']'
     );
@@ -76,9 +75,9 @@ document.querySelector('.registro-form').addEventListener('submit', function(e) 
 
     // Si todo es válido, puedes enviar el formulario aquí
     if (valido) {
-        alert("¡Formulario válido y listo para enviar!");
+        //alert("¡Formulario válido y listo para enviar!");
         // Aquí puedes hacer submit real o llamada AJAX
-        // this.submit();
+        this.submit();
     }
 });
 
