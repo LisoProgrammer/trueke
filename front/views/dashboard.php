@@ -76,9 +76,9 @@ require __DIR__."/../../back/check_sesion.php";
                             </div>
                         </div>
 
-                        <div>
+                        <div class="flex"> 
+                            <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
                             <span>8</span>
-                            <span>Clicks</span>
                         </div>
                     </div>
 
@@ -109,9 +109,9 @@ require __DIR__."/../../back/check_sesion.php";
                             </div>
                         </div>
 
-                        <div>
+                        <div class="flex"> 
+                            <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
                             <span>8</span>
-                            <span>Clicks</span>
                         </div>
                     </div>
 
@@ -142,9 +142,9 @@ require __DIR__."/../../back/check_sesion.php";
                             </div>
                         </div>
 
-                        <div>
+                        <div class="flex"> 
+                            <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
                             <span>8</span>
-                            <span>Clicks</span>
                         </div>
                     </div>
 
@@ -176,9 +176,9 @@ require __DIR__."/../../back/check_sesion.php";
                             </div>
                         </div>
 
-                        <div>
+                        <div class="flex"> 
+                            <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
                             <span>8</span>
-                            <span>Clicks</span>
                         </div>
                     </div>
 
@@ -218,10 +218,10 @@ require __DIR__."/../../back/check_sesion.php";
                         </div>
                     </div>
 
-                    <div>
-                        <span>8</span>
-                        <span>Clicks</span>
-                    </div>
+                <div class="flex">
+                <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
+                <span>8</span>
+            </div>
                 </div>
 
                 <div class="img">
@@ -247,10 +247,10 @@ require __DIR__."/../../back/check_sesion.php";
                         </div>
                     </div>
 
-                    <div>
-                        <span>8</span>
-                        <span>Clicks</span>
-                    </div>
+                <div class="flex">
+                <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
+                <span>8</span>
+            </div>
                 </div>
 
                 <div class="img">
@@ -276,10 +276,10 @@ require __DIR__."/../../back/check_sesion.php";
                         </div>
                     </div>
 
-                    <div>
-                        <span>8</span>
-                        <span>Clicks</span>
-                    </div>
+                <div class="flex">
+                <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
+                <span>8</span>
+            </div>
                 </div>
 
                 <div class="img">
@@ -305,10 +305,10 @@ require __DIR__."/../../back/check_sesion.php";
                         </div>
                     </div>
 
-                    <div>
-                        <span>8</span>
-                        <span>Clicks</span>
-                    </div>
+                <div class="flex">
+                <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
+                <span>8</span>
+            </div>
                 </div>
 
                 <div class="img">
@@ -334,10 +334,10 @@ require __DIR__."/../../back/check_sesion.php";
                         </div>
                     </div>
 
-                    <div>
-                        <span>8</span>
-                        <span>Clicks</span>
-                    </div>
+                <div class="flex">
+                <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
+                <span>8</span>
+            </div>
                 </div>
 
                 <div class="img">
@@ -363,10 +363,10 @@ require __DIR__."/../../back/check_sesion.php";
                         </div>
                     </div>
 
-                    <div>
-                        <span>8</span>
-                        <span>Clicks</span>
-                    </div>
+                <div class="flex">
+                <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
+                <span>8</span>
+            </div>
                 </div>
 
                 <div class="img">
