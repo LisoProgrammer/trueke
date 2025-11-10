@@ -348,3 +348,47 @@ h3 {
   margin: 0 auto; /* centrar el contenedor general */
   padding: 0px 0px 20px 0px;
 }
+
+.capa_principal_new_publication {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+}
+
+.window_new_publication{
+  width: 750px;
+  height: auto;
+  margin-top: 60px;
+  position: relative;
+}
+
+.window_new_publication.closed{
+  top: -100%;
+}
+
+.window_new_publication.opened{
+  top: 0;
+}
+
+.capa_principal_new_publication header{
+  padding: 10px;
+  width: 100%;
+}
+
+.capa_principal_new_publication header button{
+    padding: 0px;
+    border: none;
+    background: none;
+}
+
+.capa_principal_new_publication.closed{
+  z-index: -300;
+  background: transparent;
+}
+
+.capa_principal_new_publication.opened{
+  background: rgba(128, 128, 128, 0.33);
+  z-index: 500;
+}
