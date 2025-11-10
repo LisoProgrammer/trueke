@@ -67,7 +67,7 @@
         <div class="logo-header">
             <img src="/<?php echo $file_root ?>/assets/logo_zero.png" alt="">
         </div>
-        <button class="primary-button">
+        <button class="primary-button" id='button_new_publication_secondary'>
             <span><img src="/<?php echo $file_root ?>/assets/icons/add.png" alt=""></span>
             <span>Publicar nuevo</span>
         </button>
@@ -84,3 +84,5 @@
 <?php
 include "menu.php"
 ?>
+
+<script src='/trueke/front/js/controller_window_new_publication.js'></script>
