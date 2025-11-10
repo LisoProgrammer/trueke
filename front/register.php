@@ -14,17 +14,17 @@
                 <img src="../assets/image.png" alt="Logo TRUEKE">
             </div>
             <h1>Regístrate</h1>
-            <form class="registro-form" autocomplete="off" onsubmit="return false;">
+            <form class="registro-form" method="POST" autocomplete="off" onsubmit="return false;" action="/trueke/back/api/register.php">
                 <p>Crea una cuenta para disfrutar de todas las características de TRUEKE.</p>
 
                 <h3>¿Cómo te llamas?</h3>
                 <div class="input-group">
                     <span class="input-icon"><img src="../assets/icons/id.png" alt=""></span>
-                    <input type="text" id="nombre" placeholder="Nombre" required>
+                    <input type="text" id="nombre" name="primer_nombre" placeholder="Nombre" required>
                 </div>
                 <div class="input-group">
                     <span class="input-icon"><img src="../assets/icons/id.png" alt=""></span>
-                    <input type="text" id="apellido" placeholder="Apellido" required>
+                    <input type="text" id="apellido" name="primer_apellido" placeholder="Apellido" required>
                 </div>
  
 
@@ -41,14 +41,14 @@
                 <div class="input-group">
                     <span class="input-icon"><img src="../assets/icons/mail.png" alt=""></span>
                 <input
-                    type="email" id="correo" placeholder="example@utb.edu.co" requiredinputmode="email" spellcheck="false" autocomplete="off" pattern="^[a-z0-9._%+-]+@utb\.edu\.co$" oninput="validarCorreo()"
+                    type="email" id="correo" placeholder="example@utb.edu.co" name="correo" requiredinputmode="email" spellcheck="false" autocomplete="off" pattern="^[a-z0-9._%+-]+@utb\.edu\.co$" oninput="validarCorreo()"
                 >
                 </div>
                 <h3>Crea tu contraseña</h3>
                 <p class="ayuda">Tu contraseña debe tener mínimo <b>8</b> caracteres.</p>
                 <div class="input-group">
                     <span class="input-icon"><img src="../assets/icons/key.png" alt=""></span>
-                    <input type="password" id="pass1" placeholder="Contraseña" minlength="8" required>
+                    <input type="password" id="pass1" placeholder="Contraseña" name="pass" minlength="8" required>
                 </div>
                 <div class="input-group">
                     <span class="input-icon"><img src="../assets/icons/key.png" alt=""></span>
@@ -65,7 +65,9 @@
         <br>
     </main>
     <script src="js/register.js"></script>
-    
+    <?php
+    include "events.php";
+    ?>
 </body>
 </html>
 

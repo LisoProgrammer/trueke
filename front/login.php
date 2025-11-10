@@ -45,7 +45,9 @@
         <br>
     </main>
     <script src="js/login.js"></script>
-
+    <?php
+    include "events.php";
+    ?>
 </body>
 
 </html>
