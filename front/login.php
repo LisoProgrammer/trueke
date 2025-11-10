@@ -16,7 +16,7 @@
                 <img src="../assets/image.png" alt="Logo TRUEKE">
             </div>
             <h1>Iniciar sesión </h1>
-            <form class="registro-form" autocomplete="off" onsubmit="return false;" action="/trueke/back/auth.php">
+            <form class="registro-form" autocomplete="off" onsubmit="return false;" action="/trueke/back/auth.php" method="POST">
                 <p>¡Bienvenido! Inicia sesión para empezar a intercambiar cosas.</p>
                 <div class="msg-error" id="correoError" style="display:none;">
                     <span class="icon-error">❌</span> El correo no es válido o no pertenece al dominio <b>@utb.edu.co</b>.
@@ -26,12 +26,12 @@
                 </div>
                 <div class="input-group">
                     <span class="input-icon"><img src="../assets/icons/mail.png" alt=""></span>
-                    <input type="email" id="correo" placeholder="example@utb.edu.co" required style="text-transform: none;" oninput="validarCorreo()">
+                    <input type="email" name="correo" id="correo" placeholder="example@utb.edu.co" required style="text-transform: none;" oninput="validarCorreo()">
                 </div>
 
                 <div class="input-group">
                     <span class="input-icon"><img src="../assets/icons/key.png" alt=""></span>
-                    <input type="password" id="pass1" placeholder="Contraseña" minlength="8" required>
+                    <input type="password" name="pass" id="pass1" placeholder="Contraseña" minlength="8" required>
                 </div>
 
                 <span id="password_message"></span>
