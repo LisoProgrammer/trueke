@@ -1,5 +1,6 @@
 <?php
 require __DIR__."/../../back/check_sesion.php";
+$user = $_SESSION["user"];
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +26,7 @@ require __DIR__."/../../back/check_sesion.php";
     include "modules/header.php";
     ?>
     <main>
-        <h2>¡Hola Lisandro!, tienes 1 solicitud(es) de trueque</h2>
+        <h2>¡Hola <?php echo $user["primer_nombre"]?>!, tienes 1 solicitud(es) de trueque</h2>
         <div class="div-group">
             <div class="card_dash green">
                 <div>
