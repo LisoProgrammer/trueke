@@ -248,13 +248,15 @@ h3 {
 }
 
 .card_item > .img {
-  max-height: 300px;
+  height: 300px;
   display: flex;
   align-items: center;
+  overflow: hidden;
+  justify-content: center;
 }
 
 .card_item > .img > img {
-  width: 100%;
+  height: 100%;
 }
 
 /* Texto dentro de la tarjeta */
@@ -357,38 +359,38 @@ h3 {
   justify-content: center;
 }
 
-.window_new_publication{
+.window_new_publication {
   width: 750px;
   height: auto;
   position: relative;
   transition: top 0.3s;
 }
 
-.window_new_publication.closed{
+.window_new_publication.closed {
   top: -100%;
 }
 
-.window_new_publication.opened{
+.window_new_publication.opened {
   top: 50px;
 }
 
-.capa_principal_new_publication header{
+.capa_principal_new_publication header {
   padding: 10px;
   width: 100%;
 }
 
-.capa_principal_new_publication header button{
-    padding: 0px;
-    border: none;
-    background: none;
+.capa_principal_new_publication header button {
+  padding: 0px;
+  border: none;
+  background: none;
 }
 
-.capa_principal_new_publication.closed{
+.capa_principal_new_publication.closed {
   z-index: -300;
   background: transparent;
 }
 
-.capa_principal_new_publication.opened{
+.capa_principal_new_publication.opened {
   background: rgba(128, 128, 128, 0.33);
   z-index: 500;
 }
