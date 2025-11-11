@@ -360,8 +360,8 @@ h3 {
 .window_new_publication{
   width: 750px;
   height: auto;
-  margin-top: 60px;
   position: relative;
+  transition: top 0.3s;
 }
 
 .window_new_publication.closed{
@@ -369,7 +369,7 @@ h3 {
 }
 
 .window_new_publication.opened{
-  top: 0;
+  top: 50px;
 }
 
 .capa_principal_new_publication header{
