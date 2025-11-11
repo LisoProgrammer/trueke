@@ -398,7 +398,6 @@ h3 {
   background: rgba(128, 128, 128, 0.33);
   z-index: 500;
 }
-<<<<<<< HEAD
 /* ---- CONTENIDO INTERNO DE LA VENTANA (LO DE LA IMAGEN) ---- */
 
 /* Dos columnas: izquierda (select + dropzone), derecha (título + descripción) */
@@ -525,5 +524,3 @@ h3 {
   background-color: #f0fff4;
   border-color: #18a848;
 }
-=======
->>>>>>> 8ce780fb14982d883fba0dc39e6e1b11c88f368a
