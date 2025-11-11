@@ -28,7 +28,7 @@ $user = $_SESSION["user"];
     ?>
     <main>
         <?php
-        require __DIR__."/../../api/results.php";
+        require __DIR__."/../../back/api/results.php";
         ?>
         <h2>Resultados encontrados para "<?php echo $_GET["buscar"] ?>" (50) </h2>
     </main>    
