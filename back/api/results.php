@@ -8,7 +8,7 @@ if(isset($_GET["buscar"])){
         $result=$sql_busqueda->get_result();
         $all_result=[];
         while($row=$result->fetch_assoc()){
-            
+
             $all_result[$row["id_publicacion"]] = [
                 "id_autor" => $row["id_autor"],
                 "titulo" => $row["titulo"],
@@ -19,7 +19,9 @@ if(isset($_GET["buscar"])){
                 "visualizaciones" => $row["visualizaciones"]
             ];
         }
-        print_r($all_result);
+        echo "<script>";
+        print_r("let results = ".json_encode($all_result));
+        echo "</script>";
     }
         
 }
