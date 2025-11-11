@@ -1,5 +1,5 @@
 <?php
-require __DIR__."/../../back/check_sesion.php";
+require __DIR__ . "/../../back/check_sesion.php";
 $user = $_SESSION["user"];
 ?>
 
@@ -27,7 +27,7 @@ $user = $_SESSION["user"];
     include "modules/header.php";
     ?>
     <main>
-        <h2>¡Hola <?php echo $user["primer_nombre"]?>!, tienes 1 solicitud(es) de trueque</h2>
+        <h2>¡Hola <?php echo $user["primer_nombre"] ?>!, tienes 1 solicitud(es) de trueque</h2>
         <div class="div-group">
             <div class="card_dash green">
                 <div>
@@ -67,7 +67,7 @@ $user = $_SESSION["user"];
             </button>
 
             <!-- Contenedor de tarjetas -->
-            <div class="cards-wrapper">
+            <div class="cards-wrapper" id="container_my_publications">
                 <div class="card_item">
                     <div class="flex">
                         <div class="flex">
@@ -78,7 +78,7 @@ $user = $_SESSION["user"];
                             </div>
                         </div>
 
-                        <div class="flex"> 
+                        <div class="flex">
                             <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
                             <span>8</span>
                         </div>
@@ -92,107 +92,7 @@ $user = $_SESSION["user"];
                         <button class="flex delete">
                             <img src="/trueke/assets/icons/delete.png" alt="">
                             <span>
-                               Eliminar publicación 
-                            </span>
-                        </button>
-                        <button>
-                            <span class="num_buble">1</span>
-                            <img src="/trueke/assets/icons/gift.png" alt="">
-                        </button>
-                    </div>
-                </div>
-                <div class="card_item">
-                    <div class="flex">
-                        <div class="flex">
-                            <img src="/trueke/assets/icons/arrow_right.png" alt="">
-                            <div class="flex column">
-                                <span>Lisandro Z...</span>
-                                <span>Hace 3 minutos</span>
-                            </div>
-                        </div>
-
-                        <div class="flex"> 
-                            <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
-                            <span>8</span>
-                        </div>
-                    </div>
-
-                    <div class="img">
-                        <img src="/trueke/assets/samples/4335.jpg" alt="">
-                    </div>
-
-                    <div class="flex tools">
-                        <button class="flex delete">
-                            <img src="/trueke/assets/icons/delete.png" alt="">
-                            <span>
-                               Eliminar publicación 
-                            </span>
-                        </button>
-                        <button>
-                            <span class="num_buble">1</span>
-                            <img src="/trueke/assets/icons/gift.png" alt="">
-                        </button>
-                    </div>
-                </div>
-                <div class="card_item">
-                    <div class="flex">
-                        <div class="flex">
-                            <img src="/trueke/assets/icons/arrow_right.png" alt="">
-                            <div class="flex column">
-                                <span>Lisandro Z...</span>
-                                <span>Hace 3 minutos</span>
-                            </div>
-                        </div>
-
-                        <div class="flex"> 
-                            <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
-                            <span>8</span>
-                        </div>
-                    </div>
-
-                    <div class="img">
-                        <img src="/trueke/assets/samples/4335.jpg" alt="">
-                    </div>
-
-                    <div class="flex tools">
-                        <button class="flex delete">
-                            <img src="/trueke/assets/icons/delete.png" alt="">
-                            <span>
-                               Eliminar publicación 
-                            </span>
-                        </button>
-                        <button>
-                            <span class="num_buble">1</span>
-                            <img src="/trueke/assets/icons/gift.png" alt="">
-                        </button>
-                    </div>
-                </div>
-
-                <div class="card_item">
-                    <div class="flex">
-                        <div class="flex">
-                            <img src="/trueke/assets/icons/arrow_right.png" alt="">
-                            <div class="flex column">
-                                <span>Lisandro Z...</span>
-                                <span>Hace 3 minutos</span>
-                            </div>
-                        </div>
-
-                        <div class="flex"> 
-                            <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
-                            <span>8</span>
-                        </div>
-                    </div>
-
-                    <div class="img">
-                        <img src="/trueke/assets/samples/4335.jpg" alt="">
-                    </div>
-
-                    <div class="flex tools">
-                        <button class="flex delete">
-                            <img src="/trueke/assets/icons/delete.png" alt="">
-                            <span>
-                               Eliminar publicación 
+                                Eliminar publicación
                             </span>
                         </button>
                         <button>
@@ -209,7 +109,7 @@ $user = $_SESSION["user"];
             </button>
         </div>
         <h2>Sugerencias para tí</h2>
-        <div class="grid_layout_cards">
+        <div class="grid_layout_cards" id="container_publications_sugg">
             <div class="card_item">
                 <div class="flex">
                     <div class="flex">
@@ -220,155 +120,10 @@ $user = $_SESSION["user"];
                         </div>
                     </div>
 
-                <div class="flex">
-                <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
-                <span>8</span>
-            </div>
-                </div>
-
-                <div class="img">
-                    <img src="/trueke/assets/samples/4335.jpg" alt="">
-                </div>
-                <div class="flex tools">
-                    <button class="flex center primary-button">
-                        <img src="/trueke/assets/icons/trueque.png" alt="">
-                        <span>Solicitar trueque</span>
-                    </button>
-                    <button>
-                        <img src="/trueke/assets/icons/dislike.png" alt="">
-                    </button>
-                </div>
-            </div>
-            <div class="card_item">
-                <div class="flex">
                     <div class="flex">
-                        <img src="/trueke/assets/icons/arrow_right.png" alt="">
-                        <div class="flex column">
-                            <span>Lisandro Z...</span>
-                            <span>Hace 3 minutos</span>
-                        </div>
+                        <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
+                        <span>8</span>
                     </div>
-
-                <div class="flex">
-                <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
-                <span>8</span>
-            </div>
-                </div>
-
-                <div class="img">
-                    <img src="/trueke/assets/samples/4335.jpg" alt="">
-                </div>
-                <div class="flex tools">
-                    <button class="flex center primary-button">
-                        <img src="/trueke/assets/icons/trueque.png" alt="">
-                        <span>Solicitar trueque</span>
-                    </button>
-                    <button>
-                        <img src="/trueke/assets/icons/dislike.png" alt="">
-                    </button>
-                </div>
-            </div>
-            <div class="card_item">
-                <div class="flex">
-                    <div class="flex">
-                        <img src="/trueke/assets/icons/arrow_right.png" alt="">
-                        <div class="flex column">
-                            <span>Lisandro Z...</span>
-                            <span>Hace 3 minutos</span>
-                        </div>
-                    </div>
-
-                <div class="flex">
-                <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
-                <span>8</span>
-            </div>
-                </div>
-
-                <div class="img">
-                    <img src="/trueke/assets/samples/4335.jpg" alt="">
-                </div>
-                <div class="flex tools">
-                    <button class="flex center primary-button">
-                        <img src="/trueke/assets/icons/trueque.png" alt="">
-                        <span>Solicitar trueque</span>
-                    </button>
-                    <button>
-                        <img src="/trueke/assets/icons/dislike.png" alt="">
-                    </button>
-                </div>
-            </div>
-            <div class="card_item">
-                <div class="flex">
-                    <div class="flex">
-                        <img src="/trueke/assets/icons/arrow_right.png" alt="">
-                        <div class="flex column">
-                            <span>Lisandro Z...</span>
-                            <span>Hace 3 minutos</span>
-                        </div>
-                    </div>
-
-                <div class="flex">
-                <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
-                <span>8</span>
-            </div>
-                </div>
-
-                <div class="img">
-                    <img src="/trueke/assets/samples/4335.jpg" alt="">
-                </div>
-                <div class="flex tools">
-                    <button class="flex center primary-button">
-                        <img src="/trueke/assets/icons/trueque.png" alt="">
-                        <span>Solicitar trueque</span>
-                    </button>
-                    <button>
-                        <img src="/trueke/assets/icons/dislike.png" alt="">
-                    </button>
-                </div>
-            </div>
-            <div class="card_item">
-                <div class="flex">
-                    <div class="flex">
-                        <img src="/trueke/assets/icons/arrow_right.png" alt="">
-                        <div class="flex column">
-                            <span>Lisandro Z...</span>
-                            <span>Hace 3 minutos</span>
-                        </div>
-                    </div>
-
-                <div class="flex">
-                <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
-                <span>8</span>
-            </div>
-                </div>
-
-                <div class="img">
-                    <img src="/trueke/assets/samples/4335.jpg" alt="">
-                </div>
-                <div class="flex tools">
-                    <button class="flex center primary-button">
-                        <img src="/trueke/assets/icons/trueque.png" alt="">
-                        <span>Solicitar trueque</span>
-                    </button>
-                    <button>
-                        <img src="/trueke/assets/icons/dislike.png" alt="">
-                    </button>
-                </div>
-            </div>
-            <div class="card_item">
-                <div class="flex">
-                    <div class="flex">
-                        <img src="/trueke/assets/icons/arrow_right.png" alt="">
-                        <div class="flex column">
-                            <span>Lisandro Z...</span>
-                            <span>Hace 3 minutos</span>
-                        </div>
-                    </div>
-
-                <div class="flex">
-                <span><img src="/trueke/assets/icons/view.png" alt="" class="s"></span>
-                <span>8</span>
-            </div>
                 </div>
 
                 <div class="img">
@@ -386,7 +141,8 @@ $user = $_SESSION["user"];
             </div>
         </div>
     </main>
-
+    <script src="/trueke/front/js/cards.js"></script>
+    <script src="/trueke/front/js/load_publications.js"></script>
 </body>
 
 </html>
