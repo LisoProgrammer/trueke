@@ -18,7 +18,7 @@ function new_card_publication(id_pub, container, autor, time, img_src, text, vis
     let img_container = document.createElement("div");
     img_container.className = "img";
     let img = document.createElement("img");
-    img.src = "/trueke/assets/samples/4335.jpg";
+    img.src = "/trueke/assets/samples/"+img_src;
     img_container.appendChild(img);
     let div_tools = document.createElement("div");
     div_tools.className = "flex tools";
@@ -62,7 +62,7 @@ function new_card_my_publication(id_pub, container, autor, time, img_src, text, 
     let img_container = document.createElement("div");
     img_container.className = "img";
     let img = document.createElement("img");
-    img.src = "/trueke/assets/samples/4335.jpg";
+    img.src = "/trueke/assets/samples/"+img_src;
     img_container.appendChild(img);
     let div_tools = document.createElement("div");
     div_tools.className = "flex tools";

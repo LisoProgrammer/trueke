@@ -29,9 +29,24 @@ $user = $_SESSION["user"];
     <main>
         <?php
         require __DIR__."/../../back/api/results.php";
+        $buscar = isset($_GET['buscar']) ? trim($_GET['buscar']) : '';
+        $string_output = "";
+        // Usa mb_ para soportar acentos/ñ
+        $max = 22;
+        if (mb_strlen($buscar, 'UTF-8') > $max) {
+            // Cortamos y escapamos para evitar XSS
+            $trunc = mb_substr($buscar, 0, $max, 'UTF-8');
+            $string_output = htmlspecialchars($trunc, ENT_QUOTES, 'UTF-8') . '...';
+        } else {
+            $string_output = htmlspecialchars($buscar, ENT_QUOTES, 'UTF-8');
+        }
         ?>
-        <h2>Resultados encontrados para "<?php echo $_GET["buscar"] ?>" (50) </h2>
-    </main>    
-
+        <h2>Resultados encontrados para "<?php echo $string_output ?>" (<span id="n_results"></span>) </h2>
+        <div class="grid_layout_cards" id="container_publications">
+            
+        </div>
+    </main>   
+    <script src="/trueke/front/js/cards.js"></script> 
+    <script src="/trueke/front/js/load_results.js"></script>
 </body>
 </html>
