@@ -65,7 +65,7 @@
 <header>
     <div class="div-group">
         <div class="logo-header">
-            <img src="/<?php echo $file_root ?>/assets/logo_zero.png" alt="">
+            <a href="/trueke/front/views/dashboard.php"><img src="/<?php echo $file_root ?>/assets/logo_zero.png" alt=""></a>
         </div>
         <button class="primary-button" id='button_new_publication_secondary'>
             <span><img src="/<?php echo $file_root ?>/assets/icons/add.png" alt=""></span>
