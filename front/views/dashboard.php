@@ -145,11 +145,9 @@ $user = $_SESSION["user"];
     <?php include __DIR__ . '/modules/ventana_solicitar_trueque.php'; ?>
     <script src="/trueke/front/js/cards.js"></script>
     <script src="/trueke/front/js/load_publications.js"></script>
-    
-
-</button>
-
-
+    <?php
+    include "../events.php";
+    ?>
 </body>
 
 </html>
