@@ -11,6 +11,10 @@
   justify-content: space-between;
   align-items: center;
 }
+.center {
+  justify-content: center;
+  align-items: center !important;
+}
 .flex.column {
   flex-direction: column;
   align-items: flex-start;
@@ -383,6 +387,7 @@ h3 {
 .capa_principal_new_publication header {
   padding: 10px;
   width: 100%;
+  border-radius: 8px 8px 0px 0px;
 }
 
 .capa_principal_new_publication header button {
@@ -525,4 +530,24 @@ h3 {
 .dropzone_new_publication.dragover {
   background-color: #f0fff4;
   border-color: #18a848;
+}
+.container_layout_img_articulo{
+  width: 100%;
+  padding: 5px;
+  border: 1px solid rgb(204, 204, 204);
+  margin-top: 10px;
+}
+.container_layout_img_articulo span{
+  font-size: 12px;
+}
+.container_img_articulo {
+  width: 200px;
+  height: auto;
+  max-height: 200px;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+}
+.container_img_articulo img{
+  width: 100%;
 }
