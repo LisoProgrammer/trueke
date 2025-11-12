@@ -12,7 +12,8 @@ for (let id_publication in results) {
     item.autor,
     "3 minutos",
     item.imagen,
-    "",
+    item.titulo,
+    item.descripcion,
     item.visualizaciones
   );
 }

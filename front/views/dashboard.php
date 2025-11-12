@@ -10,6 +10,7 @@ $user = $_SESSION["user"];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="/trueke/assets/css/solicitar_trueque.css?v=3">
     <title>TRUEKE | Dashboard</title>
     <style>
         h1,
@@ -141,8 +142,14 @@ $user = $_SESSION["user"];
             </div>
         </div>
     </main>
+    <?php include __DIR__ . '/modules/ventana_solicitar_trueque.php'; ?>
     <script src="/trueke/front/js/cards.js"></script>
     <script src="/trueke/front/js/load_publications.js"></script>
+    
+
+</button>
+
+
 </body>
 
 </html>

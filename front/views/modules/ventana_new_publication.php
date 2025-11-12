@@ -25,18 +25,18 @@
               <div class="dropzone_new_publication" id="dropzone_new_publication">
                 <p>Arrastre las imágenes o presione aquí</p>
                 <input type="file" id="input_imagenes_new_publication"
-                       name="imagenes[]" multiple accept="image/*">
+                      name="imagenes[]" multiple accept="image/*">
               </div>
             </div>
 
             <div class="column_right_new_publication">
               <label class="label_new_publication">Título</label>
               <input type="text"
-                     id="titulo_publicacion"
-                     class="input_text_new_publication"
-                     placeholder="El nombre del artículo o servicio..."
-                     maxlength="80"
-                     required>
+                    id="titulo_publicacion"
+                    class="input_text_new_publication"
+                    placeholder="El nombre del artículo o servicio..."
+                    maxlength="80"
+                    required>
 
               <label class="label_new_publication" style="margin-top: 12px;">Descripción</label>
               <div class="textarea_wrapper_new_publication">

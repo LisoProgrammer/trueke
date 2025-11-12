@@ -1,0 +1,89 @@
+
+/* Capa oscura que cubre toda la ventana */
+.capa_principal_solicitar_trueque {
+  position: fixed;
+  inset: 0;                        /* top:0; right:0; bottom:0; left:0 */
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 10000;
+  display: none;                   /* estado base (cerrado) */
+}
+
+/* Ventana */
+.window_solicitar_trueque {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border-radius: 8px;
+  width: min(950px, 92vw);
+  max-height: 85vh;
+  overflow: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  z-index: 10001;
+  display: none;                   /* estado base (cerrado) */
+}
+
+/* Estados */
+.capa_principal_solicitar_trueque.opened { display: block; }
+.window_solicitar_trueque.opened        { display: block; }
+
+.capa_principal_solicitar_trueque.closed { display: none; }
+.window_solicitar_trueque.closed         { display: none; }
+
+/* Header del modal */
+.window_solicitar_trueque header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 18px;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 2;
+}
+.window_solicitar_trueque header h5,
+.window_solicitar_trueque header h2,
+.window_solicitar_trueque header h3 {
+  margin: 0;
+}
+
+/* Body */
+.window_solicitar_trueque .modal-body {
+  padding: 18px;
+}
+
+/* Footer */
+.window_solicitar_trueque .modal-footer {
+  padding: 14px 18px;
+  border-top: 1px solid #eee;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+/* Galería */
+#solicitar-trueque-gallery {
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#solicitar-trueque-img {
+  max-width: 100%;
+  max-height: 220px;
+  display: block;
+}
+
+/* Botón cerrar */
+#close_window_solicitar_trueque {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  line-height: 0;
+}
