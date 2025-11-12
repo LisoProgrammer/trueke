@@ -17,6 +17,7 @@ CREATE TABLE publicacion (
     id_autor INT NOT NULL,
     titulo TEXT NOT NULL,
     descripcion TEXT,
+    servicio INT NOT NULL DEFAULT 0 CHECK (servicio IN (0,1)),
     imagen TEXT,
     fecha DATE NOT NULL,
     hora TIME NOT NULL,
