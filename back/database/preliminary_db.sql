@@ -57,7 +57,16 @@ CREATE TABLE solicitado_a (
         FOREIGN KEY (id_usuario2) REFERENCES usuario(id)
         ON UPDATE CASCADE ON DELETE CASCADE
 );
-
+CREATE TABLE no_le_gusta(
+    id_usuario INT NOT NULL,
+    id_pub INT NOT NULL,
+    CONSTRAINT fk_id_user
+        FOREIGN KEY (id_usuario) REFERENCES usuario(id)
+        ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT fk_id_pub
+        FOREIGN KEY (id_pub) REFERENCES publicacion(id_publicacion)
+        ON UPDATE CASCADE ON DELETE CASCADE
+);
 CREATE TABLE intereses (
     id_interes INT AUTO_INCREMENT PRIMARY KEY,
     id_usuario INT NOT NULL,
