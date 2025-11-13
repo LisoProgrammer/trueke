@@ -109,9 +109,9 @@ $user = $_SESSION["user"];
                 <img src="/trueke/assets/icons/right.png" alt="">
             </button>
         </div>
-        <h2>Sugerencias para tí</h2>
+        <h2>Publicaciones más recientes</h2>
         <div class="grid_layout_cards" id="container_publications_sugg">
-            <div class="card_item">
+            <!--<div class="card_item">
                 <div class="flex">
                     <div class="flex">
                         <img src="/trueke/assets/icons/arrow_right.png" alt="">
@@ -139,12 +139,13 @@ $user = $_SESSION["user"];
                         <img src="/trueke/assets/icons/dislike.png" alt="">
                     </button>
                 </div>
-            </div>
+            </div>-->
         </div>
     </main>
     <?php 
     include __DIR__ . '/modules/ventana_solicitar_trueque.php'; 
     include __DIR__ . "/../../back/api/my_publications.php";
+    include __DIR__ . "/../../back/api/publications.php";
     ?>
     <script src="/trueke/front/js/cards.js"></script>
     <script src="/trueke/front/js/load_publications.js"></script>
