@@ -194,6 +194,9 @@ function new_card_my_publication(
   button_truekes.innerHTML = `
         <span class="num_buble">${n_truekes}</span>
         <img src="/trueke/assets/icons/gift.png" alt="">`;
+  button_truekes.addEventListener("click", ()=>{
+    window.open("/trueke/front/views/details_trueke.php?id_pub=" + id_pub, "_blank");
+  })
   div_tools.appendChild(button_eliminar_publicacion);
   div_tools.appendChild(button_truekes);
   let div_card = document.createElement("div");
