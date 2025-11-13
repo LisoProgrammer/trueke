@@ -40,7 +40,7 @@ if(isset($_POST)){
     $articulo_or_servicio = intval($_POST["articulo_or_servicio"]);
     $titulo = htmlspecialchars(stripslashes(trim($_POST["titulo"])), ENT_QUOTES, 'UTF-8');
     $descripcion =htmlspecialchars(stripslashes(trim( $_POST["descripcion"])), ENT_QUOTES, 'UTF-8');
-    $sql_insert_publication = $con->prepare("INSERT INTO `publicacion`(`id_autor`, `titulo`, `descripcion`,`servicio`, `imagen`, `fecha`, `hora`, `visualizaciones`) VALUES (?, ?, ?, ?, ?, CURTIME(), CURDATE(), 0)");
+    $sql_insert_publication = $con->prepare("INSERT INTO `publicacion`(`id_autor`, `titulo`, `descripcion`,`servicio`, `imagen`, `fecha`, `hora`, `visualizaciones`) VALUES (?, ?, ?, ?, ?, CURDATE(), CURTIME(), 0)");
     if($sql_insert_publication){
         $sql_insert_publication->bind_param("issss",$id_user,$titulo,$descripcion,$articulo_or_servicio, $img_article_name);
         $sql_insert_publication->execute();
