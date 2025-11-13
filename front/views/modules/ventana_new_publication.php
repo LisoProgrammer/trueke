@@ -49,9 +49,9 @@
                           name="descripcion"
                           class="textarea_new_publication"
                           placeholder="Describe brevemente lo que ofreces, que defectos tiene el artículo, en qué estado se encuentra..."
-                          maxlength="400"></textarea>
+                          maxlength="230"></textarea>
                 <span class="contador_chars_new_publication">
-                  <span id="contador_desc_new_publication">0</span>/400
+                  <span id="contador_desc_new_publication">0</span>/230
                 </span>
               </div>
             </div>
