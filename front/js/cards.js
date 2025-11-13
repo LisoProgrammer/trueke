@@ -86,7 +86,7 @@ function new_card_publication(
         <img src="/trueke/assets/icons/trueque.png" alt="">
         <span>Solicitar trueque</span>
     `;
-  button_solicitar_trueke.addEventListener("click", () => {
+  button_solicitar_trueke.addEventListener("click", async () => {
     window_solicitar_trueque.classList.remove("closed");
     window_solicitar_trueque.classList.add("opened");
     capa_principal_solicitar_trueque.classList.remove("closed");
@@ -96,6 +96,16 @@ function new_card_publication(
     titulo_ventana_solicitar_trueque.innerText = titulo;
     autor_ventana_solicitar_trueque.innerText = autor;
     descripcion_ventana_solicitar_trueque.innerText = descripcion;
+    let form = new FormData();
+    form.append("id_pub",id_pub);
+    let update_views_request = await fetch("/trueke/back/api/update_views.php",{
+      method: "POST",
+      body: form
+    })
+    if(update_views_request.ok){
+      let response = await update_views_request.text();
+      console.log(response);
+    }
   });
   let button_dislike = document.createElement("button");
   button_dislike.innerHTML = `<img src="/trueke/assets/icons/dislike.png" alt="">`;
