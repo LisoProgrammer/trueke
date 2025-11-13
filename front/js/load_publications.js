@@ -42,3 +42,18 @@ if (my_publications.length <= 3) {
     });
   });
 }
+for (let i = 0; i < publications.length; i++) {
+  let item = publications[i];
+
+  new_card_publication(
+    item.id_publicacion,
+    container_publications_sugg,
+    item.autor,
+    item.imagen,
+    item.titulo,
+    item.descripcion,
+    item.visualizaciones,
+    item.fecha,
+    item.hora
+  );
+}
