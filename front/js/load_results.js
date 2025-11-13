@@ -10,10 +10,11 @@ for (let id_publication in results) {
     id_publication,
     container_publications,
     item.autor,
-    "3 minutos",
     item.imagen,
     item.titulo,
     item.descripcion,
-    item.visualizaciones
+    item.visualizaciones,
+    item.fecha,
+    item.hora
   );
 }
