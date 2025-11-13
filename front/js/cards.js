@@ -55,7 +55,7 @@ function new_card_publication(
             <img src="/trueke/assets/icons/arrow_right.png" alt="">
             <div class="flex column">
                 <span>${autor}</span>
-                <span>Hace ${tiempo_transcurrido(fecha,hora)}</span>
+                <span>Hace ${tiempo_transcurrido(fecha, hora)}</span>
             </div>
         </div>
         <div class="flex">
@@ -97,18 +97,38 @@ function new_card_publication(
     autor_ventana_solicitar_trueque.innerText = autor;
     descripcion_ventana_solicitar_trueque.innerText = descripcion;
     let form = new FormData();
-    form.append("id_pub",id_pub);
-    let update_views_request = await fetch("/trueke/back/api/update_views.php",{
-      method: "POST",
-      body: form
-    })
-    if(update_views_request.ok){
-      let response = await update_views_request.text();
+    form.append("id_pub", id_pub);
+    let update_views_request = await fetch(
+      "/trueke/back/api/update_views.php",
+      {
+        method: "POST",
+        body: form,
+      }
+    );
+    if (update_views_request.ok) {
+      let response = await update_views_request.json();
+      if (response.inserted_dislike) {
+        if (container.children.length === 0) {
+          renderPublications();
+        }
+      }
       console.log(response);
     }
   });
   let button_dislike = document.createElement("button");
   button_dislike.innerHTML = `<img src="/trueke/assets/icons/dislike.png" alt="">`;
+  button_dislike.addEventListener("click", async () => {
+    let form = new FormData();
+    form.append("id_pub", id_pub);
+    let dislike_request = await fetch("/trueke/back/api/insert_dislike.php", {
+      method: "POST",
+      body: form,
+    });
+    if (dislike_request.ok) {
+      let response = await dislike_request.text();
+      console.log(response);
+    }
+  });
   div_tools.appendChild(button_solicitar_trueke);
   div_tools.appendChild(button_dislike);
   let div_card = document.createElement("div");
@@ -139,7 +159,7 @@ function new_card_my_publication(
             <img src="/trueke/assets/icons/arrow_right.png" alt="">
             <div class="flex column">
                 <span>${autor}</span>
-                <span>Hace ${tiempo_transcurrido(fecha,hora)}</span>
+                <span>Hace ${tiempo_transcurrido(fecha, hora)}</span>
             </div>
         </div>
         <div class="flex">
@@ -181,7 +201,38 @@ function new_card_my_publication(
   div_card.innerHTML = header;
   div_card.appendChild(img_container);
   div_card.appendChild(div_tools);
-
+  button_eliminar_publicacion.addEventListener("click", async () => {
+    Swal.fire({
+      title: "¿Estás seguro de aliminar la publicación?",
+      text: "No podrás revertir eso",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Sí, hazlo",
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        /*Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success",
+        });*/
+        let form = new FormData();
+        form.append("id_pub", id_pub);
+        let delete_pub_request = await fetch("/trueke/back/api/delete_publication.php",{
+          method: "POST",
+          body: form
+        })
+        if(delete_pub_request.ok){
+          let response = await delete_pub_request.json();
+          console.log(response);
+          if(response.deleted){
+            div_card.remove();
+          }
+        }
+      }
+    });
+  });
   container.appendChild(div_card);
   return div_card;
 }
