@@ -63,13 +63,13 @@ $user = $_SESSION["user"];
 
         <div class="layout-move-items">
             <!-- Botón izquierda -->
-            <button class="btn-move prev">
+            <button class="btn-move prev" id="bth_carrusel_left">
                 <img src="/trueke/assets/icons/left.png" alt="">
             </button>
 
             <!-- Contenedor de tarjetas -->
             <div class="cards-wrapper" id="container_my_publications">
-                <div class="card_item">
+                <!--<div class="card_item">
                     <div class="flex">
                         <div class="flex">
                             <img src="/trueke/assets/icons/arrow_right.png" alt="">
@@ -101,11 +101,11 @@ $user = $_SESSION["user"];
                             <img src="/trueke/assets/icons/gift.png" alt="">
                         </button>
                     </div>
-                </div>
+                </div>-->
             </div>
 
             <!-- Botón derecha -->
-            <button class="btn-move next">
+            <button class="btn-move next" id="bth_carrusel_right">
                 <img src="/trueke/assets/icons/right.png" alt="">
             </button>
         </div>
@@ -142,7 +142,10 @@ $user = $_SESSION["user"];
             </div>
         </div>
     </main>
-    <?php include __DIR__ . '/modules/ventana_solicitar_trueque.php'; ?>
+    <?php 
+    include __DIR__ . '/modules/ventana_solicitar_trueque.php'; 
+    include __DIR__ . "/../../back/api/my_publications.php";
+    ?>
     <script src="/trueke/front/js/cards.js"></script>
     <script src="/trueke/front/js/load_publications.js"></script>
     <?php
