@@ -16,7 +16,7 @@ if (isset($_GET["buscar"])) {
                 "descripcion" => $row["descripcion"],
                 "imagen" => $row["imagen"],
                 "fecha" => $row["fecha"],
-                "hora " => $row["hora"],
+                "hora" => $row["hora"],
                 "visualizaciones" => $row["visualizaciones"]
             ];
         }
