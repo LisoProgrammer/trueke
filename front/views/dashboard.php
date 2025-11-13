@@ -146,12 +146,11 @@ $user = $_SESSION["user"];
     include __DIR__ . '/modules/ventana_solicitar_trueque.php'; 
     include __DIR__ . "/../../back/api/my_publications.php";
     include __DIR__ . "/../../back/api/publications.php";
-    ?>
-    <script src="/trueke/front/js/cards.js"></script>
-    <script src="/trueke/front/js/load_publications.js"></script>
-    <?php
     include "../events.php";
     ?>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/trueke/front/js/cards.js"></script>
+    <script src="/trueke/front/js/load_publications.js"></script>
 </body>
 
 </html>
