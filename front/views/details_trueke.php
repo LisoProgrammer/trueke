@@ -18,6 +18,9 @@ $user = $_SESSION["user"];
         h3 {
             color: #000;
         }
+        #container_my_pub {
+            width: 100%;
+        }
     </style>
 </head>
 
@@ -29,7 +32,10 @@ $user = $_SESSION["user"];
     ?>
     <main>
         <h2>Tu publicación</h2>
-        <div class="publication">
+        <div id="container_my_pub">
+
+        </div>
+        <!--<div class="publication">
             <div class="img">
                 <img src="/trueke/assets/samples/juego.png" alt="">
             </div>
@@ -46,7 +52,7 @@ $user = $_SESSION["user"];
                             <span>Artículo</span>
                         </span>
                     </div>
-                    <span>Hoy, a las 9:30 AM</span>
+                    <span class="datetime">Hoy, a las 9:30 AM</span>
                 </div>
                 <div class="flex">
                     <div class="flex">
@@ -65,9 +71,10 @@ $user = $_SESSION["user"];
                     <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nam omnis nobis eveniet quisquam quod ad voluptatum, reiciendis, odit repudiandae eaque sapiente consectetur, perspiciatis molestias dolorum quasi aliquam? Optio, qui.</span>
                 </div>
             </div>
-        </div>
+        </div>-->
         <h2>Ofertas de trueque</h2>
-        <div class="publication oferta">
+        <div id="container_ofertas"></div>
+        <!--<div class="publication oferta">
             <div class="img">
                 <img src="/trueke/assets/samples/juego.png" alt="">
             </div>
@@ -103,81 +110,7 @@ $user = $_SESSION["user"];
                     <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nam omnis nobis eveniet quisquam quod ad voluptatum, reiciendis, odit repudiandae eaque sapiente consectetur, perspiciatis molestias dolorum quasi aliquam? Optio, qui.</span>
                 </div>
             </div>
-        </div>
-        <div class="publication oferta">
-            <div class="img">
-                <img src="/trueke/assets/samples/bata.png" alt="">
-            </div>
-            <div class="content">
-                <div class="info_container">
-                    <div class="flex">
-                        <span class="flex info_bag oferta">
-                            <img src="/trueke/assets/icons/gift.png" alt="">
-                            <span>Oferta</span>
-                        </span>
-                        <span>Tipo</span>
-                        <span class="flex info_bag servicio">
-                            <img src="/trueke/assets/icons/agree.png" alt="">
-                            <span>Servicio</span>
-                        </span>
-                    </div>
-                    <span>Hoy, a las 9:30 AM</span>
-                </div>
-                <div class="flex">
-                    <div class="flex">
-                        <img src="/trueke/assets/icons/arrow_right_z.png" alt="">
-                        <span><b>Lisandro Zapata</b></span>
-                    </div>
-                    <button class="flex primary-button accept_trueke">
-                        <img src="/trueke/assets/icons/check.png" alt="">
-                        <span>
-                            Aceptar trueque
-                        </span>
-                    </button>
-                </div>
-                <div>
-                    <h2>Cambio una calculadora por cualquier cosa.</h2>
-                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nam omnis nobis eveniet quisquam quod ad voluptatum, reiciendis, odit repudiandae eaque sapiente consectetur, perspiciatis molestias dolorum quasi aliquam? Optio, qui.</span>
-                </div>
-            </div>
-        </div>
-        <div class="publication oferta">
-            <div class="img">
-                <img src="/trueke/assets/samples/4335.jpg" alt="">
-            </div>
-            <div class="content">
-                <div class="info_container">
-                    <div class="flex">
-                        <span class="flex info_bag oferta">
-                            <img src="/trueke/assets/icons/gift.png" alt="">
-                            <span>Oferta</span>
-                        </span>
-                        <span>Tipo</span>
-                        <span class="flex info_bag servicio">
-                            <img src="/trueke/assets/icons/agree.png" alt="">
-                            <span>Servicio</span>
-                        </span>
-                    </div>
-                    <span>Hoy, a las 9:30 AM</span>
-                </div>
-                <div class="flex">
-                    <div class="flex">
-                        <img src="/trueke/assets/icons/arrow_right_z.png" alt="">
-                        <span><b>Lisandro Zapata</b></span>
-                    </div>
-                    <button class="flex primary-button accept_trueke">
-                        <img src="/trueke/assets/icons/check.png" alt="">
-                        <span>
-                            Aceptar trueque
-                        </span>
-                    </button>
-                </div>
-                <div>
-                    <h2>Cambio una calculadora por cualquier cosa.</h2>
-                    <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nam omnis nobis eveniet quisquam quod ad voluptatum, reiciendis, odit repudiandae eaque sapiente consectetur, perspiciatis molestias dolorum quasi aliquam? Optio, qui.</span>
-                </div>
-            </div>
-        </div>
+        </div>-->
     </main>
     <?php
     //include __DIR__ . '/modules/ventana_solicitar_trueque.php'; 
@@ -186,8 +119,7 @@ $user = $_SESSION["user"];
     include "../events.php";
     ?>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="/trueke/front/js/cards.js"></script>
-    <script src="/trueke/front/js/load_publications.js"></script>
+    <script src="/trueke/front/js/publications.js"></script>
 </body>
 
 </html>
