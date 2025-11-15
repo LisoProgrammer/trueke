@@ -25,7 +25,7 @@
                     <div class="info-textos">
                         <div class="mb-2 flex">
                             <label class="form-label mb-0 text-muted">
-                                Acerca de la publicación
+                                Publica una oferta para intercambiar esto
                             </label>
                             <label>
                                 <img src="/trueke/assets/icons/info_black.png" alt="" width="18px">
@@ -73,7 +73,7 @@
                             <div class="flex center column container_layout_img_articulo" style="margin-top: 4px;">
                                 <span>Previsualización de la imagen</span>
                                 <div class="flex center container_img_articulo">
-                                    <img src="" alt="" id="preview_img_articulo">
+                                    <img src="" alt="" id="preview_img_articulo_solicitar_trueque">
                                 </div>
                             </div>
 
@@ -81,9 +81,9 @@
                             <label class="label_new_publication" style="margin-top: 8px;">
                                 Carga la imagen del artículo (opcional)
                             </label>
-                            <div class="dropzone_new_publication" id="dropzone_new_publication">
+                            <div class="dropzone_new_publication" id="dropzone_new_publication_solicitar_trueque">
                                 <p>Arrastre las imagen o presione aquí</p>
-                                <input type="file" id="input_imagenes_new_publication" name="img_article" multiple
+                                <input type="file" id="input_imagenes_new_publication_solictar_trueque" name="img_article" multiple
                                     accept="image/*">
                             </div>
 
@@ -99,14 +99,13 @@
                                 Descripción (opcional)
                             </label>
                             <div class="textarea_wrapper_new_publication">
-                                <textarea id="descripcion_publicacion" name="descripcion" class="textarea_new_publication"
+                                <textarea id="descripcion_publicacion_st" name="descripcion" class="textarea_new_publication"
                                     placeholder="Describe brevemente lo que ofreces, que defectos tiene el artículo, en qué estado se encuentra..."
                                     maxlength="230"></textarea>
                                 <span class="contador_chars_new_publication">
-                                    <span id="contador_desc_new_publication">0</span>/230
+                                    <span id="contador_desc_new_publication_st">0</span>/230
                                 </span>
                             </div>
-                        </form>
                     </div>
                 </div>
 
@@ -119,7 +118,8 @@
                     <span>Solicitar trueque</span>
                 </button>
             </footer>
-
+            </form>
         </div>
     </div>
 </div>
+<script src="/trueke/front/js/solicitar_trueque_form.js"></script>
