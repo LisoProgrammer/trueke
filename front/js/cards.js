@@ -22,6 +22,7 @@ let autor_ventana_solicitar_trueque = document.getElementById(
 let descripcion_ventana_solicitar_trueque = document.getElementById(
   "solicitar-trueque-descripcion"
 );
+let input_id_pub_base = document.getElementById("id_pub_base");
 let container_img_gallery = document.getElementById("solicitar-trueque-gallery");
 let lineal_gradientes = [
   "linear-gradient(135deg, #3B82F6, #9333EA)", // Azul profundo con violeta
@@ -88,6 +89,7 @@ function new_card_publication(
         <span>Solicitar trueque</span>
     `;
   button_solicitar_trueke.addEventListener("click", async () => {
+    input_id_pub_base.value = id_pub;
     window_solicitar_trueque.classList.remove("closed");
     window_solicitar_trueque.classList.add("opened");
     capa_principal_solicitar_trueque.classList.remove("closed");
