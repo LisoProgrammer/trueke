@@ -1,5 +1,4 @@
 let img_preview_element_solicitar_trueque = document.getElementById("preview_img_articulo_solicitar_trueque");
-
 button_close_new_publication_secondary.addEventListener("click", () => {
   if (window_open) {
     window_open = false;
