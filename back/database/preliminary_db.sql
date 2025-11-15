@@ -22,6 +22,7 @@ CREATE TABLE publicacion (
     fecha DATE NOT NULL,
     hora TIME NOT NULL,
     visualizaciones INT DEFAULT 0,
+    oferta INT DEFAULT 0 CHECK (oferta IN (0,1)),
     CONSTRAINT fk_publicacion_autor
         FOREIGN KEY (id_autor) REFERENCES usuario(id)
         ON UPDATE CASCADE ON DELETE CASCADE
@@ -40,7 +41,6 @@ CREATE TABLE trueke (
 CREATE TABLE solicitado_a (
     id_solicitado_a INT AUTO_INCREMENT PRIMARY KEY,
     id_publicacion1 INT NOT NULL,
-    descripcion TEXT,
     id_publicacion2 INT NOT NULL,
     id_usuario1 INT NOT NULL,
     id_usuario2 INT NOT NULL,
