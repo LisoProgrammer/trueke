@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . "/../connection.php";
 $id_user = $_SESSION["user"]["id"];
-$sql_my_publications = $con->prepare("SELECT `id_publicacion`, usuario.primer_nombre as primer_nombre, usuario.primer_apellido as primer_apellido, `titulo`, `descripcion`, `imagen`, `fecha`, `hora`, `visualizaciones` FROM `publicacion` JOIN usuario ON usuario.id = publicacion.id_autor WHERE id_autor = ? ORDER BY id_publicacion DESC");
+$sql_my_publications = $con->prepare("SELECT `id_publicacion`, usuario.primer_nombre as primer_nombre, usuario.primer_apellido as primer_apellido, `titulo`, `descripcion`, `imagen`, `fecha`, `hora`, `visualizaciones` FROM `publicacion` JOIN usuario ON usuario.id = publicacion.id_autor WHERE id_autor = ? AND oferta != 1 ORDER BY id_publicacion DESC");
 if ($sql_my_publications) {
     $sql_my_publications->bind_param("i", $id_user);
     $sql_my_publications->execute();

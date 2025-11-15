@@ -2,7 +2,7 @@
 require __DIR__ . "/../connection.php";
 if (isset($_GET["buscar"])) {
     $id_user = $_SESSION["user"]["id"];
-    $sql_busqueda = $con->prepare("SELECT `id_publicacion`, usuario.primer_nombre as primer_nombre, usuario.primer_apellido as primer_apellido, `titulo`, `descripcion`, `imagen`, `fecha`, `hora`, `visualizaciones` FROM `publicacion` JOIN usuario ON usuario.id = publicacion.id_autor WHERE usuario.id != ? AND LOWER(titulo) LIKE CONCAT('%',?,'%') OR LOWER(descripcion) LIKE CONCAT('%',?,'%') ORDER BY id_publicacion DESC");
+    $sql_busqueda = $con->prepare("SELECT `id_publicacion`, usuario.primer_nombre as primer_nombre, usuario.primer_apellido as primer_apellido, `titulo`, `descripcion`, `imagen`, `fecha`, `hora`, `visualizaciones` FROM `publicacion` JOIN usuario ON usuario.id = publicacion.id_autor WHERE usuario.id != ? AND publicacion.oferta != 1 AND LOWER(titulo) LIKE CONCAT('%',?,'%') OR LOWER(descripcion) LIKE CONCAT('%',?,'%') ORDER BY id_publicacion DESC");
     if ($sql_busqueda) {
         $input_lower = strtolower($_GET["buscar"]);
         $sql_busqueda->bind_param("iss", $id_user, $input_lower, $input_lower);
