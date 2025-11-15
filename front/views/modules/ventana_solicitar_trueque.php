@@ -57,7 +57,7 @@
                 <!-- ========== BLOQUE 2: DERECHA ========== -->
                 <div class="detalle-right">
                     <div class="detalle-right-card">
-                        <form method="POST" action="">
+                        <form method="POST" action="/trueke/back/api/solicitar_trueque.php">
                             <!-- ¿ARTÍCULO O SERVICIO? -->
                             <label class="label_new_publication">
                                 ¿Es un artículo o un servicio? (obligatorio)
@@ -106,6 +106,7 @@
                                     <span id="contador_desc_new_publication_st">0</span>/230
                                 </span>
                             </div>
+                            <input type="hidden" name="id_pub_base" id="id_pub_base">
                     </div>
                 </div>
 
