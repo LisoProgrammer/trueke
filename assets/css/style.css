@@ -375,7 +375,7 @@ button.delete {
 }
 
 .window_new_publication {
-  width: 750px;
+  width: 660px;
   height: auto;
   position: relative;
   transition: top 0.3s;
@@ -598,7 +598,7 @@ button.delete {
   justify-content: space-between;
 }
 
-.publication .info_bag {
+.publication .info_bag, #solicitar-trueque-titulo #info_bag {
   padding: 4px;
   border-radius: 4px;
 }
@@ -623,7 +623,7 @@ button.delete {
   width: 15px;
   margin-right: 2px;
 }
-.publication .info_bag.oferta {
+.publication .info_bag.oferta, #solicitar-trueque-titulo #info_bag.oferta {
   background: var(--offer-bag-color);
   font-size: 15px;
   margin-right: 5px;
@@ -635,7 +635,7 @@ button.delete {
   margin-right: 5px;
   filter: invert(1);
 }
-.publication .info_bag.servicio {
+.publication .info_bag.servicio, #solicitar-trueque-titulo #info_bag.servicio {
   background: var(--service-bag-color);
   font-size: 15px;
   margin-right: 5px;
@@ -645,6 +645,7 @@ button.delete {
   width: 15px;
   margin-right: 5px;
 }
+
 .accept_trueke {
   background: var(--primary-color);
   border: none;

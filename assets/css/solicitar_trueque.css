@@ -1,11 +1,10 @@
-
 /* Capa oscura que cubre toda la ventana */
 .capa_principal_solicitar_trueque {
   position: fixed;
-  inset: 0;                        /* top:0; right:0; bottom:0; left:0 */
+  inset: 0; /* top:0; right:0; bottom:0; left:0 */
   background: rgba(0, 0, 0, 0.45);
   z-index: 10000;
-  display: none;                   /* estado base (cerrado) */
+  display: none; /* estado base (cerrado) */
 }
 
 /* Ventana */
@@ -21,15 +20,23 @@
   overflow: auto;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
   z-index: 10001;
-  display: none;                   /* estado base (cerrado) */
+  display: none; /* estado base (cerrado) */
 }
 
 /* Estados */
-.capa_principal_solicitar_trueque.opened { display: block; }
-.window_solicitar_trueque.opened        { display: block; }
+.capa_principal_solicitar_trueque.opened {
+  display: block;
+}
+.window_solicitar_trueque.opened {
+  display: block;
+}
 
-.capa_principal_solicitar_trueque.closed { display: none; }
-.window_solicitar_trueque.closed         { display: none; }
+.capa_principal_solicitar_trueque.closed {
+  display: none;
+}
+.window_solicitar_trueque.closed {
+  display: none;
+}
 
 /* Header del modal */
 .window_solicitar_trueque header {
@@ -66,7 +73,6 @@
 
 /* Galería */
 #solicitar-trueque-gallery {
-  border: 1px dashed #d9d9d9;
   border-radius: 6px;
   min-height: 240px;
   display: flex;
@@ -86,4 +92,159 @@
   cursor: pointer;
   padding: 6px;
   line-height: 0;
+}
+/* CONTENEDOR PRINCIPAL DE LOS DOS BLOQUES */
+.detalle-container {
+  display: flex;
+  gap: 18px;
+  /* compacto */
+  width: 100%;
+  align-items: flex-start;
+}
+
+/* BLOQUE IZQUIERDO */
+.detalle-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: sticky;
+  top: 0;
+}
+
+/* Imagen más compacta */
+.detalle-left img#solicitar-trueque-img {
+  width: 60%;
+  max-height: 340px;
+  object-fit: contain;
+  display: block;
+}
+
+/* Tarjeta de texto compacta */
+.detalle-left .info-textos {
+  background: #E7E7E7;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+/* BLOQUE DERECHO COMO TARJETA */
+.detalle-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.detalle-right-card {
+  background: #ffffff;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  padding: 14px 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.detalle-right select,
+.detalle-right input,
+.detalle-right textarea {
+  width: 100%;
+  font-size: 14px;
+}
+
+/* Dropzone más pequeño */
+.dropzone_new_publication {
+  width: 100%;
+  min-height: 90px;
+  border: 2px dashed #b5c4d4;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f8fbff;
+  cursor: pointer;
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+  transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+/* Imagen preview más pequeña */
+.container_img_articulo img {
+  width: 90px;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* TEXTAREA COMPACTA */
+.textarea_wrapper_new_publication {
+  width: 100%;
+  position: relative;
+}
+
+.textarea_new_publication {
+  width: 100%;
+  min-height: 85px;
+  resize: vertical;
+  padding-right: 55px;
+  font-size: 14px;
+}
+
+.contador_chars_new_publication {
+  position: absolute;
+  bottom: 4px;
+  right: 6px;
+  font-size: 11px;
+  color: #666;
+}
+
+/* ====== AJUSTES DEL MODAL PARA BOTÓN FIJO ====== */
+
+/* El contenedor de la ventana será un flex en columna
+       y limitamos la altura para que haya scroll interno */
+#window_solicitar_trueque {
+  display: flex;
+  flex-direction: column;
+  max-height: 90vh;
+  overflow: hidden; /* el scroll se hace solo en .modal-body */
+}
+
+/* El cuerpo del modal es el que scrollea */
+#window_solicitar_trueque .modal-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 16px 16px 0px 16px;
+}
+#solicitar-trueque-titulo{
+  margin: 5px 0px;
+}
+#solicitar-trueque-autor{
+  width: 100%;
+  display: block;
+  margin-top: 5px;
+  color: #2a2a2a;
+}
+/* FOOTER: botón fijo al fondo del modal */
+.modal-footer {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 16px;
+  margin-top: 0;
+  border-top: 1px solid #ddd;
+  background: #ffffff;
+  position: sticky;
+  bottom: 0;
+  z-index: 5;
+  border-top: 1px solid #c1c1c1;
+}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .detalle-container {
+    flex-direction: column;
+  }
 }
