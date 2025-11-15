@@ -22,6 +22,7 @@ let autor_ventana_solicitar_trueque = document.getElementById(
 let descripcion_ventana_solicitar_trueque = document.getElementById(
   "solicitar-trueque-descripcion"
 );
+let container_img_gallery = document.getElementById("solicitar-trueque-gallery");
 let lineal_gradientes = [
   "linear-gradient(135deg, #3B82F6, #9333EA)", // Azul profundo con violeta
   "linear-gradient(135deg, #F43F5E, #7E22CE)", // Rojo coral con púrpura
@@ -92,8 +93,13 @@ function new_card_publication(
     capa_principal_solicitar_trueque.classList.remove("closed");
     capa_principal_solicitar_trueque.classList.add("opened");
     console.log(window_solicitar_trueque);
-    img_articulo_solicitar_trueque.src = "/trueke/assets/samples/" + img_src;
-    titulo_ventana_solicitar_trueque.innerText = titulo;
+    if(img_src!=""){
+      img_articulo_solicitar_trueque.src = "/trueke/assets/samples/" + img_src;
+      container_img_gallery.style.display = "flex";
+    }else{
+      container_img_gallery.style.display = "none";
+    }
+    titulo_ventana_solicitar_trueque.innerHTML = titulo + ``;
     autor_ventana_solicitar_trueque.innerText = autor;
     descripcion_ventana_solicitar_trueque.innerText = descripcion;
     let form = new FormData();
