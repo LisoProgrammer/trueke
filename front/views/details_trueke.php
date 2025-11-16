@@ -29,6 +29,7 @@ $user = $_SESSION["user"];
     include "../../setting.php";
     include "modules/ventana_new_publication.php";
     include "modules/header.php";
+    include __DIR__ . "/../../back/api/details_trueque.php";
     ?>
     <main>
         <h2>Tu publicación</h2>
