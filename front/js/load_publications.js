@@ -15,7 +15,7 @@ function renderMyPublications() {
       item.titulo,
       item.descripcion,
       item.visualizaciones,
-      0,
+      item.num_ofertas,
       item.fecha,
       item.hora
     );
