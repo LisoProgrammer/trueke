@@ -131,6 +131,43 @@ function new_publicacion_details(
   let button_action = document.createElement("button");
   button_action.className = class_button;
   button_action.innerHTML = `<img src="${icon_button}" alt=""><span>${text_button}</span>`;
+  if (type_pub == "my") {
+    button_action.addEventListener("click", async () => {
+      Swal.fire({
+        title: "¿Estás seguro de aliminar la publicación?",
+        text: "No podrás revertir eso",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí, hazlo",
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+          /*Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success",
+        });*/
+          let form = new FormData();
+          form.append("id_pub", id_pub);
+          let delete_pub_request = await fetch(
+            "/trueke/back/api/delete_publication.php",
+            {
+              method: "POST",
+              body: form,
+            }
+          );
+          if (delete_pub_request.ok) {
+            let response = await delete_pub_request.json();
+            console.log(response);
+            if (response.deleted) {
+              window.location.href = "/trueke/"
+            }
+          }
+        }
+      });
+    });
+  }
   let body_pub = document.createElement("div");
   body_pub.innerHTML = `<h2>${titulo}</h2><span>${descripcion}</span>`;
   div_autor_button.appendChild(button_action);

@@ -33,6 +33,7 @@ CREATE TABLE trueke (
     id_usuario INT NOT NULL,
     pendiente TINYINT(1) DEFAULT 1,
     cancelado TINYINT(1) DEFAULT 0,
+    hecho INT DEFAULT 0,
     CONSTRAINT fk_trueke_usuario
         FOREIGN KEY (id_usuario) REFERENCES usuario(id)
         ON UPDATE CASCADE ON DELETE CASCADE
