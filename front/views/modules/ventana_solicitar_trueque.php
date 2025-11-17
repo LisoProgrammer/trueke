@@ -57,7 +57,7 @@
                 <!-- ========== BLOQUE 2: DERECHA ========== -->
                 <div class="detalle-right">
                     <div class="detalle-right-card">
-                        <form method="POST" action="/trueke/back/api/solicitar_trueque.php">
+                        <form method="POST" action="/trueke/back/api/solicitar_trueque.php" enctype="multipart/form-data">
                             <!-- ¿ARTÍCULO O SERVICIO? -->
                             <label class="label_new_publication">
                                 ¿Es un artículo o un servicio? (obligatorio)
