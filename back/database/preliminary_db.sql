@@ -9,7 +9,8 @@ CREATE TABLE usuario (
     correo_institucional TEXT UNIQUE NOT NULL,
     hash_contrasena TEXT NOT NULL,
     calificacion DECIMAL(2,1) DEFAULT 0.5 CHECK (calificacion BETWEEN 0.5 AND 5.0),
-    n_votantes INT DEFAULT 0
+    n_votantes INT DEFAULT 0,
+    telefono INT(10) NULL
 );
 
 CREATE TABLE publicacion (
@@ -29,13 +30,17 @@ CREATE TABLE publicacion (
 );
 
 CREATE TABLE trueke (
-    id_trueke INT AUTO_INCREMENT PRIMARY KEY,
-    id_usuario INT NOT NULL,
+    id_pub1 INT NOT NULL,
+    id_pub2 INT NOT NULL,
     pendiente TINYINT(1) DEFAULT 1,
     cancelado TINYINT(1) DEFAULT 0,
     hecho INT DEFAULT 0,
-    CONSTRAINT fk_trueke_usuario
-        FOREIGN KEY (id_usuario) REFERENCES usuario(id)
+    PRIMARY KEY (id_pub1, id_pub2),
+    CONSTRAINT fk_pub1 FOREIGN KEY (id_pub1)
+        REFERENCES publicacion(id_publicacion)
+        ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT fk_pub2 FOREIGN KEY (id_pub2)
+        REFERENCES publicacion(id_publicacion)
         ON UPDATE CASCADE ON DELETE CASCADE
 );
 
