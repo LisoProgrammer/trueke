@@ -9,6 +9,10 @@ let lineal_gradientes = [
   "linear-gradient(135deg, #1E293B, #334155)", // Gris oscuro con azul acero
   "linear-gradient(135deg, #EC4899, #8B5CF6)", // Rosa palo con lavanda
 ];
+console.log(my_publication);
+if(my_publication == null){
+  window.location.href = "/trueke/front/views/dashboard.php"
+}
 //let my_publication = {"id_publicacion":21,"primer_nombre":"Lisandro","primer_apellido":"Zapata","titulo":"Cambio calculadora cientifica","descripcion":"La calculadora est\u00e1 en buen estado, la compr\u00e9 hace dos semanas, necesito una bata de laboratorio a cambio","servicio":0,"imagen":"_img_69150305cbd0b7.73383067.webp","fecha":"2025-11-12","hora":"00:00:00","visualizaciones":4,"oferta":0};
 let type_my_pub = "article";
 if (parseInt(my_publication.servicio) == 1) {
@@ -166,6 +170,43 @@ function new_publicacion_details(
             if (response.deleted) {
               window.location.href = "/trueke/front/views/dashboard.php";
             }
+          }
+        }
+      });
+    });
+  }else if(type_pub == "oferta"){
+    button_action.addEventListener("click", async () => {
+      Swal.fire({
+        title: "¿Estás seguro de aceptar este trueque?",
+        text: "Puedes cancelarlo más tarde",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí, hazlo",
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+          /*Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success",
+        });*/
+          let form = new FormData();
+          form.append("id_pub1", my_publication.id_publicacion)
+          form.append("id_pub2", id_pub);
+          let acept_pub_request = await fetch(
+            "/trueke/back/api/acept_trueque.php",
+            {
+              method: "POST",
+              body: form,
+            }
+          );
+          if (acept_pub_request.ok) {
+            let response = await acept_pub_request.json();
+            console.log(response);
+            /*if (response.deleted) {
+              window.location.href = "/trueke/front/views/dashboard.php";
+            }*/
           }
         }
       });
