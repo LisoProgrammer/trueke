@@ -15,6 +15,7 @@ if (parseInt(my_publication.servicio) == 1) {
   type_my_pub = "servicio";
 }
 new_publicacion_details(
+  my_publication.id_publicacion,
   container_my_pub,
   "my",
   type_my_pub,
@@ -31,6 +32,7 @@ for (let i in offers) {
     type_pub = "servicio";
   }
   new_publicacion_details(
+    offers[i].id_publicacion,
     container_ofertas,
     "oferta",
     type_pub,
@@ -46,6 +48,7 @@ for (let i in offers) {
 //new_publicacion_details(container_ofertas,"oferta","article","Lisandro Zapata","Cambio una calculadora por lo que sea. Urgee","Lorem ipsum dolor sit amet contessa sas sasada efef asa","4335.jpg","2025-11-14","10:40:00");
 //new_publicacion_details(container_ofertas,"oferta","servicio","Lisandro Zapata","Cambio una calculadora por lo que sea. Urgee","Lorem ipsum dolor sit amet contessa sas sasada efef asa","4335.jpg","2025-11-14","10:40:00");
 function new_publicacion_details(
+  id_pub,
   container,
   type_pub,
   type_oferta,
@@ -161,7 +164,7 @@ function new_publicacion_details(
             let response = await delete_pub_request.json();
             console.log(response);
             if (response.deleted) {
-              window.location.href = "/trueke/"
+              window.location.href = "/trueke/front/views/dashboard.php";
             }
           }
         }
