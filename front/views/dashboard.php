@@ -26,34 +26,35 @@ $user = $_SESSION["user"];
     include "../../setting.php";
     include "modules/ventana_new_publication.php";
     include "modules/header.php";
+    include __DIR__."/../../back/api/estadisticas.php"
     ?>
     <main>
         <h2>¡Hola <?php echo $user["primer_nombre"] ?>!, tienes 1 solicitud(es) de trueque</h2>
         <div class="div-group">
             <div class="card_dash green">
                 <div>
-                    <span>1</span>
+                    <span id="pendiente_span">...</span>
                     <span><img src="/trueke/assets/icons/clip.png" alt=""></span>
                 </div>
                 <span>Pendientes</span>
             </div>
-            <div class="card_dash red">
+            <div class="card_dash lila">
                 <div>
-                    <span>1</span>
-                    <span><img src="/trueke/assets/icons/info.png" alt=""></span>
+                    <span id="vistas_span">...</span>
+                    <span><img src="/trueke/assets/icons/views.png" alt=""></span>
                 </div>
-                <span>Cancelados</span>
+                <span>Vistas</span>
             </div>
             <div class="card_dash yellow">
                 <div>
-                    <span>4.5</span>
+                    <span id="calificacion_span">...</span>
                     <span><img src="/trueke/assets/icons/star.png" alt=""></span>
                 </div>
                 <span>Tu calificación</span>
             </div>
             <div class="card_dash blue">
                 <div>
-                    <span>5</span>
+                    <span id="truekes_hechos_span">...</span>
                     <span><img src="/trueke/assets/icons/trending.png" alt=""></span>
                 </div>
                 <span>Trueques hechos</span>
@@ -151,6 +152,7 @@ $user = $_SESSION["user"];
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="/trueke/front/js/cards.js"></script>
     <script src="/trueke/front/js/load_publications.js"></script>
+    <script src="/trueke/front/js/load_stadistics.js"></script>
 </body>
 
 </html>
