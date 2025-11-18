@@ -43,7 +43,7 @@ if($sqlget_view){
     $sqlget_view->close();
 }
 
-$sqlget_hechos = $con->prepare("SELECT count(hecho) AS hechos FROM trueke WHERE id_usuario = ?");
+$sqlget_hechos = $con->prepare("SELECT count(trueke.hecho) AS hechos FROM trueke JOIN publicacion ON trueke.id_pub1 = publicacion.id_publicacion WHERE publicacion.id_autor = ? AND trueke.hecho = 1");
 if($sqlget_hechos){
     $sqlget_hechos->bind_param("i",$id_user);
     $sqlget_hechos->execute();
