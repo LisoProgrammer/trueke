@@ -1,23 +1,37 @@
 let container_my_pub = document.getElementById("container_my_pub");
 let container_ofertas = document.getElementById("container_ofertas");
+
 let lineal_gradientes = [
-  "linear-gradient(135deg, #3B82F6, #9333EA)", // Azul profundo con violeta
-  "linear-gradient(135deg, #F43F5E, #7E22CE)", // Rojo coral con púrpura
-  "linear-gradient(135deg, #10B981, #0E7490)", // Verde esmeralda con azul petróleo
-  "linear-gradient(135deg, #F59E0B, #D97706)", // Naranja suave con dorado oscuro
-  "linear-gradient(135deg, #475569, #7C3AED)", // Azul grisáceo con violeta apagado
-  "linear-gradient(135deg, #1E293B, #334155)", // Gris oscuro con azul acero
-  "linear-gradient(135deg, #EC4899, #8B5CF6)", // Rosa palo con lavanda
+  "linear-gradient(135deg, #3B82F6, #9333EA)",
+  "linear-gradient(135deg, #F43F5E, #7E22CE)",
+  "linear-gradient(135deg, #10B981, #0E7490)",
+  "linear-gradient(135deg, #F59E0B, #D97706)",
+  "linear-gradient(135deg, #475569, #7C3AED)",
+  "linear-gradient(135deg, #1E293B, #334155)",
+  "linear-gradient(135deg, #EC4899, #8B5CF6)",
 ];
-console.log(my_publication);
-if(my_publication == null){
-  window.location.href = "/trueke/front/views/dashboard.php"
+
+console.log("id_pub2:", id_pub2);
+console.log("correo:", correo_institucional);
+function clean_url(id_pub) {
+  const url = new URL(window.location.href);
+  // Limpiar todos los parámetros
+  url.search = "";
+  // Agregar el parámetro id_pub
+  url.searchParams.set("id_pub", id_pub);
+  // Reemplaza la URL sin recargar la página
+  window.history.replaceState({}, document.title, url.toString());
 }
-//let my_publication = {"id_publicacion":21,"primer_nombre":"Lisandro","primer_apellido":"Zapata","titulo":"Cambio calculadora cientifica","descripcion":"La calculadora est\u00e1 en buen estado, la compr\u00e9 hace dos semanas, necesito una bata de laboratorio a cambio","servicio":0,"imagen":"_img_69150305cbd0b7.73383067.webp","fecha":"2025-11-12","hora":"00:00:00","visualizaciones":4,"oferta":0};
-let type_my_pub = "article";
-if (parseInt(my_publication.servicio) == 1) {
-  type_my_pub = "servicio";
+// si no hay publicación, salir
+if (my_publication == null) {
+  window.location.href = "/trueke/front/views/dashboard.php";
 }
+
+let type_my_pub = my_publication.servicio == 1 ? "servicio" : "article";
+
+// =====================
+//      MI PUBLICACIÓN
+// =====================
 new_publicacion_details(
   my_publication.id_publicacion,
   container_my_pub,
@@ -30,11 +44,13 @@ new_publicacion_details(
   my_publication.fecha,
   my_publication.hora
 );
+
+// =====================
+//       OFERTAS
+// =====================
 for (let i in offers) {
-  let type_pub = "article";
-  if (offers[i].servicio == 1) {
-    type_pub = "servicio";
-  }
+  let type_pub = offers[i].servicio == 1 ? "servicio" : "article";
+
   new_publicacion_details(
     offers[i].id_publicacion,
     container_ofertas,
@@ -48,9 +64,10 @@ for (let i in offers) {
     offers[i].hora
   );
 }
-//new_publicacion_details(container_my_pub,"my","article","Lisandro Zapata","Cambio una calculadora por lo que sea. Urgee","Lorem ipsum dolor sit amet contessa sas sasada efef asa","","2025-11-14","10:40:00");
-//new_publicacion_details(container_ofertas,"oferta","article","Lisandro Zapata","Cambio una calculadora por lo que sea. Urgee","Lorem ipsum dolor sit amet contessa sas sasada efef asa","4335.jpg","2025-11-14","10:40:00");
-//new_publicacion_details(container_ofertas,"oferta","servicio","Lisandro Zapata","Cambio una calculadora por lo que sea. Urgee","Lorem ipsum dolor sit amet contessa sas sasada efef asa","4335.jpg","2025-11-14","10:40:00");
+
+// ==========================================================
+//                FUNCIÓN CREAR TARJETA PUBLICACIÓN
+// ==========================================================
 function new_publicacion_details(
   id_pub,
   container,
@@ -65,8 +82,10 @@ function new_publicacion_details(
 ) {
   let div_publication = document.createElement("div");
   div_publication.className = "publication";
+
   let img_container = document.createElement("div");
   img_container.className = "img";
+
   if (img_src == "") {
     let title_sliced = titulo.slice(0, 30) + "...";
     img_container.innerHTML = `<h3 style="text-align: center;color: #fff;">${title_sliced}</h3>`;
@@ -76,41 +95,34 @@ function new_publicacion_details(
 
   img_container.style.background =
     lineal_gradientes[Math.floor(Math.random() * lineal_gradientes.length)];
+
   let content = document.createElement("div");
   content.className = "content";
+
   let div_info_container = document.createElement("div");
+
   let text_type_pub = "";
   let icon_type_pub = "";
   let classname_div_info_bag = "";
-  let icon_type_oferta = "";
-  let type_oferta_name = "";
-  let text_button = "";
-  let icon_button = "";
-  let class_button = "";
-  let fecha_hum = formatearFechaHumanizada(fecha, hora);
+
+  // ----- LÓGICA DE MI PUBLICACIÓN -----
   if (type_pub == "my") {
     text_type_pub = "Tu publicación";
     icon_type_pub = "/trueke/assets/icons/globe.png";
     classname_div_info_bag = "flex info_bag my_pub";
-    text_button = "Eliminar publicación";
-    icon_button = "/trueke/assets/icons/delete.png";
-    class_button = "flex delete";
-  } else if (type_pub == "oferta") {
+  }
+
+  // ----- LÓGICA DE OFERTAS -----
+  else if (type_pub == "oferta") {
     div_publication.classList.add("oferta");
+
     text_type_pub = "Oferta";
     icon_type_pub = "/trueke/assets/icons/gift.png";
     classname_div_info_bag = "flex info_bag oferta";
-    text_button = "Aceptar trueque";
-    icon_button = "/trueke/assets/icons/check.png";
-    class_button = "flex primary-button accept_trueke";
   }
-  if (type_oferta == "article") {
-    icon_type_oferta = "/trueke/assets/icons/book.png";
-    type_oferta_name = "Artículo";
-  } else if (type_oferta == "servicio") {
-    icon_type_oferta = "/trueke/assets/icons/agree.png";
-    type_oferta_name = "Servicio";
-  }
+
+  let fecha_hum = formatearFechaHumanizada(fecha, hora);
+
   div_info_container.innerHTML = `
     <div class="info_container">
         <div class="flex">
@@ -120,25 +132,70 @@ function new_publicacion_details(
             </span>
             <span>Tipo</span>
             <span class="flex info_bag ${type_oferta}">
-                <img src="${icon_type_oferta}" alt="">
-                <span>${type_oferta_name}</span>
+                <img src="${
+                  type_oferta == "article"
+                    ? "/trueke/assets/icons/book.png"
+                    : "/trueke/assets/icons/agree.png"
+                }">
+                <span>${
+                  type_oferta == "article" ? "Artículo" : "Servicio"
+                }</span>
             </span>
         </div>
         <span class="datetime">${fecha_hum}</span>
     </div>
-    `;
+  `;
+
+  // ===========================
+  //     AUTOR + SELECTOR
+  // ===========================
   let div_autor_button = document.createElement("div");
   div_autor_button.className = "flex";
-  div_autor_button.innerHTML = `
-    <div class="flex">
-        <img src="/trueke/assets/icons/arrow_right_z.png" alt="">
-        <span><b>${autor}</b></span>
-    </div>
+
+  // ---- SI ESTA PUBLICACIÓN ES LA OFERTA ACEPTADA ----
+  if (id_pub2 != null && id_pub2 == id_pub) {
+    div_autor_button.innerHTML = `
+      <div class="flex">
+          <img src="/trueke/assets/icons/arrow_right_z.png" alt="">
+          <span>
+            <b>${autor}</b><br>
+            <a href="mailto:${correo_institucional}">${correo_institucional}</a>
+          </span>
+      </div>
     `;
-  let button_action = document.createElement("button");
-  button_action.className = class_button;
-  button_action.innerHTML = `<img src="${icon_button}" alt=""><span>${text_button}</span>`;
+  }
+
+  // ---- SI ES MI PUBLICACIÓN ----
+  else if (type_pub == "my") {
+    div_autor_button.innerHTML = `
+      <div class="flex">
+          <img src="/trueke/assets/icons/arrow_right_z.png" alt="">
+          <span><b>${autor}</b></span>
+      </div>
+    `;
+  }
+
+  // ---- SI ES OFERTA Y NO ES LA ACEPTADA → SOLO NOMBRE ----
+  else {
+    div_autor_button.innerHTML = `
+      <div class="flex">
+          <img src="/trueke/assets/icons/arrow_right_z.png" alt="">
+          <span><b>${autor}</b></span>
+      </div>
+    `;
+  }
+
+  // ===============================================================
+  //             BOTÓN (mi publicación / oferta)
+  // ===============================================================
+
+  let button_action = null;
+
+  // -------- BOTÓN MI PUBLICACIÓN --------
   if (type_pub == "my") {
+    button_action = document.createElement("button");
+    button_action.className = "flex delete";
+    button_action.innerHTML = `<img src="/trueke/assets/icons/delete.png"><span>Eliminar publicación</span>`;
     button_action.addEventListener("click", async () => {
       Swal.fire({
         title: "¿Estás seguro de aliminar la publicación?",
@@ -174,91 +231,194 @@ function new_publicacion_details(
         }
       });
     });
-  }else if(type_pub == "oferta"){
-    button_action.addEventListener("click", async () => {
-      Swal.fire({
-        title: "¿Estás seguro de aceptar este trueque?",
-        text: "Puedes cancelarlo más tarde",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#3085d6",
-        cancelButtonColor: "#d33",
-        confirmButtonText: "Sí, hazlo",
-      }).then(async (result) => {
-        if (result.isConfirmed) {
-          /*Swal.fire({
+  }
+
+  // -------- BOTÓN OFERTA --------
+  else if (type_pub == "oferta") {
+    button_action = document.createElement("button");
+
+    // ---- SI ESTA OFERTA ES LA ACEPTADA -> MOSTRAR SELECTOR ----
+    if (id_pub2 != null && id_pub2 == id_pub) {
+      button_action = "";
+      if (trueke_hecho == 1) {
+        button_action = document.createElement("span");
+        button_action.innerText = "Trueke realizado";
+        button_action.className = "trueke-realizado";
+      } else {
+        button_action = document.createElement("select");
+        button_action.className = "trueke-selector";
+
+        button_action.innerHTML = `
+      <option value="selection">Seleccionar acción</option>
+      <option value="cancelar">Cancelar trueque</option>
+      <option value="terminar">Terminar trueque</option>`;
+        button_action.addEventListener("change", () => {
+          if (button_action.value == "cancelar") {
+            Swal.fire({
+              title: "¿Estás seguro de cancelar el trueque?",
+              text: "Se cancelará y podrás solicitar otros trueques",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#3085d6",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "Sí, hazlo",
+            }).then(async (result) => {
+              if (result.isConfirmed) {
+                let form = new FormData();
+                form.append("id_pub2", id_pub);
+                let cancel_trueke_request = await fetch(
+                  "/trueke/back/api/cancel_trueque.php",
+                  {
+                    method: "POST",
+                    body: form,
+                  }
+                );
+                if (cancel_trueke_request.ok) {
+                  let response = await cancel_trueke_request.json();
+                  console.log(response.canceled_trueke);
+                  if (response.canceled_trueke) {
+                    window.location.href =
+                      "/trueke/front/views/details_trueke.php?code_msg=440&id_pub=" +
+                      my_publication.id_publicacion;
+                  }
+                }
+              } else {
+                button_action.value = "selection";
+              }
+            });
+          } else if (button_action.value == "terminar") {
+            Swal.fire({
+              title: "¿Terminaste el trueque?",
+              text: "Marca esto solo si concretaron el intercambio",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#3085d6",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "Sí, hazlo",
+            }).then(async (result) => {
+              if (result.isConfirmed) {
+                let form = new FormData();
+                form.append("id_pub2", id_pub);
+                let finish_trueke_request = await fetch(
+                  "/trueke/back/api/finish_trueque.php",
+                  {
+                    method: "POST",
+                    body: form,
+                  }
+                );
+                if (finish_trueke_request.ok) {
+                  let response = await finish_trueke_request.json();
+                  console.log(response.ended_trueke);
+                  if (response.ended_trueke) {
+                    window.location.href =
+                      "/trueke/front/views/details_trueke.php?code_msg=450&id_pub=" +
+                      my_publication.id_publicacion;
+                  }
+                }
+              } else {
+                button_action.value = "selection";
+              }
+            });
+          }
+        });
+      }
+    }
+
+    // ---- SI AÚN NO HAY TRUEQUE ACEPTADO → SE PUEDE ACEPTAR ----
+    else if (id_pub2 == null) {
+      button_action.className = "flex primary-button accept_trueke";
+      button_action.innerHTML = `<img src="/trueke/assets/icons/check.png"><span>Aceptar trueque</span>`;
+      button_action.addEventListener("click", async () => {
+        Swal.fire({
+          title: "¿Estás seguro de aceptar este trueque?",
+          text: "Puedes cancelarlo más tarde",
+          icon: "warning",
+          showCancelButton: true,
+          confirmButtonColor: "#3085d6",
+          cancelButtonColor: "#d33",
+          confirmButtonText: "Sí, hazlo",
+        }).then(async (result) => {
+          if (result.isConfirmed) {
+            /*Swal.fire({
           title: "Deleted!",
           text: "Your file has been deleted.",
           icon: "success",
         });*/
-          let form = new FormData();
-          form.append("id_pub1", my_publication.id_publicacion)
-          form.append("id_pub2", id_pub);
-          let acept_pub_request = await fetch(
-            "/trueke/back/api/acept_trueque.php",
-            {
-              method: "POST",
-              body: form,
+            let form = new FormData();
+            form.append("id_pub1", my_publication.id_publicacion);
+            form.append("id_pub2", id_pub);
+            let acept_pub_request = await fetch(
+              "/trueke/back/api/acept_trueque.php",
+              {
+                method: "POST",
+                body: form,
+              }
+            );
+            if (acept_pub_request.ok) {
+              let response = await acept_pub_request.json();
+              console.log(response);
+              if (response.accepted_trueke) {
+                window.location.reload();
+              }
             }
-          );
-          if (acept_pub_request.ok) {
-            let response = await acept_pub_request.json();
-            console.log(response);
-            /*if (response.deleted) {
-              window.location.href = "/trueke/front/views/dashboard.php";
-            }*/
           }
-        }
+        });
       });
-    });
+    }
+
+    // ---- SI YA HAY OTRO TRUEQUE ACEPTADO → NO MOSTRAR BOTÓN ----
+    else if (id_pub2 != id_pub) {
+      button_action = null;
+    }
   }
+
+  // Agregar botón si existe
+  if (button_action) div_autor_button.appendChild(button_action);
+
+  // ===========================
+  //  CONTENIDO DEL CUERPO
+  // ===========================
   let body_pub = document.createElement("div");
   body_pub.innerHTML = `<h2>${titulo}</h2><span>${descripcion}</span>`;
-  div_autor_button.appendChild(button_action);
+
   content.appendChild(div_info_container);
   content.appendChild(div_autor_button);
   content.appendChild(body_pub);
+
   div_publication.appendChild(img_container);
   div_publication.appendChild(content);
   container.appendChild(div_publication);
 }
+
+// ==========================================================
+//                 FUNCIÓN FORMATEAR FECHA
+// ==========================================================
 function formatearFechaHumanizada(fechaStr, horaStr) {
   const ahora = new Date();
   const fecha = new Date(`${fechaStr}T${horaStr}`);
 
-  // --- Obtener diferencias ---
   const msPorDia = 1000 * 60 * 60 * 24;
   const diffDias = Math.floor((ahora - fecha) / msPorDia);
 
-  // --- Obtener hora en formato 12h ---
   let horas = fecha.getHours();
   let minutos = fecha.getMinutes().toString().padStart(2, "0");
   const ampm = horas >= 12 ? "PM" : "AM";
-  horas = horas % 12 || 12; // formato 12h
+  horas = horas % 12 || 12;
 
-  const horaFormateada = `${horas}:${minutos} ${ampm}`;
-
-  // --- Comparar con hoy ---
   const hoy = new Date();
   const esMismaFecha =
     fecha.getDate() === hoy.getDate() &&
     fecha.getMonth() === hoy.getMonth() &&
     fecha.getFullYear() === hoy.getFullYear();
 
-  if (esMismaFecha) {
-    return `Hoy, a las ${horaFormateada}`;
-  }
+  if (esMismaFecha) return `Hoy, a las ${horas}:${minutos} ${ampm}`;
+  if (diffDias === 1) return `Ayer, a las ${horas}:${minutos} ${ampm}`;
+  if (diffDias === 2) return `Antier, a las ${horas}:${minutos} ${ampm}`;
 
-  // --- Ayer / Antier ---
-  if (diffDias === 1) return `Ayer, a las ${horaFormateada}`;
-  if (diffDias === 2) return `Antier, a las ${horaFormateada}`;
-
-  // --- +3 días → DD/MM/AAAA - HH:MM ---
   const dia = fecha.getDate().toString().padStart(2, "0");
   const mes = (fecha.getMonth() + 1).toString().padStart(2, "0");
   const año = fecha.getFullYear();
   const hora24 = fecha.getHours().toString().padStart(2, "0");
-  const min = minutos;
 
-  return `${dia}/${mes}/${año} - ${hora24}:${min}`;
+  return `${dia}/${mes}/${año} - ${hora24}:${minutos}`;
 }
