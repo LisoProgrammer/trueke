@@ -600,6 +600,7 @@ button.delete {
 .publication .info_container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .publication .info_bag, #solicitar-trueque-titulo #info_bag {
@@ -659,4 +660,26 @@ button.delete {
 }
 .accept_trueke > img {
   filter: invert(1);
+}
+.trueke-selector {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 3px solid var(--primary-color);
+  cursor: pointer;
+}
+.trueke-selector option {
+  color: black;
+}
+.trueke-realizado {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;        /* borde redondeado tipo píldora */
+  background: #10B981;        /* verde agradable */
+  color: white;               /* texto blanco */
+  font-weight: bold;
+  font-size: 0.9rem;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  user-select: none;          /* evitar que se seleccione */
+  pointer-events: none;       /* no permite clicks */
 }
