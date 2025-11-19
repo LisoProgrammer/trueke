@@ -29,14 +29,14 @@ $user = $_SESSION["user"];
     include __DIR__."/../../back/api/estadisticas.php"
     ?>
     <main>
-        <h2>¡Hola <?php echo $user["primer_nombre"] ?>!, tienes 1 solicitud(es) de trueque</h2>
+        <h2>¡Hola <?php echo $user["primer_nombre"] ?>!, bienvenido a tu sistema de Trueques</h2>
         <div class="div-group">
             <div class="card_dash green">
                 <div>
                     <span id="pendiente_span">...</span>
                     <span><img src="/trueke/assets/icons/clip.png" alt=""></span>
                 </div>
-                <span>Pendientes</span>
+                <span>Ofertas</span>
             </div>
             <div class="card_dash lila">
                 <div>
