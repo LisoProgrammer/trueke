@@ -58,7 +58,7 @@ trueke/
 
 ## INSTALACIÓN
 
-1. Crear una base de datos vacía con el nombre `trueke` o en su defecto el nombre definido en `/trueke/back/connection.php` en la variable $database.
+1. Crear una base de datos vacía con el nombre `trueke` o en su defecto el nombre definido en `/trueke/back/connection.php` en la variable $database_name.
 
 2. Importar el modelo de base de datos en la consola SQL:
    `/trueke/back/database/preliminary_database.sql`
@@ -75,10 +75,12 @@ trueke/
 
 6. (Opcional) Modificar parámetros de conexión a base de datos en `/trueke/back/connection.php`.
 
-6. El sistema estará listo para usarse.
+7. El sistema estará listo para usarse.
 
-## Licencia.
+## Licencia
+
 Licencia: `MIT License`
+
 ## Screenshots
 
 ![Inicio del sistema](assets/screenshots/1.png)
