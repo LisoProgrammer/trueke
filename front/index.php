@@ -20,7 +20,7 @@
 
 <body>
     <main>
-        <div class="container-center">
+        <div class="container-center" style="max-width: 380px;">
             <div class="c_icon">
                 <img src="../assets/image.png" alt="">
             </div>
