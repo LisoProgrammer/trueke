@@ -77,11 +77,11 @@ trueke/
 
 7. El sistema estará listo para usarse.
 
-## Licencia
+## LICENCIA
 
 Licencia: `MIT License`
 
-## Screenshots
+## SCREENSHOTS
 
 ![Inicio del sistema](assets/screenshots/1.png)
 ![Inicio del sistema](assets/screenshots/2.png)
